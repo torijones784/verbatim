@@ -114,6 +114,55 @@ nav {
   font-weight: 500;
 }
 
+/* Game Board Section */
+
+.stage-rect {
+  transition: transform 0.3s ease-out;
+}
+.stage-rect:hover {
+  transform: translateY(-10px);
+}
+.stage-inner-rect {
+  transition: transform 0.3s ease-out;
+}
+.stage-rect:hover .stage-inner-rect {
+  transform: translateY(-10px);
+}
+.stage-text {
+  transition: transform 0.3s ease-out;
+}
+.stage-rect:hover .stage-text {
+  transform: translateY(-10px);
+}
+
+/* Stage cards */
+.stage-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stage-card:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.1);
+}
+
+/* Media query styles added via JS for mobile */
+@media (max-width: 600px) {
+  #game-path { display: none; }
+  #stages-container { 
+    transform: translate(0, 0) !important;
+    flex-direction: column !important;
+  }
+  .stage-group {
+    transform: translate(0, 0) !important;
+    margin-bottom: 20px !important;
+  }
+  #card-container {
+    flex-direction: column !important;
+  }
+  .stage-card {
+    margin: 10px auto !important;
+  }
+}
+
 /* Hero Section */
 .hero {
   text-align: center;
