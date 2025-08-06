@@ -256,6 +256,10 @@ nav {
   display: inline-block;
   font-weight: 900;
   letter-spacing: -0.02em;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
 }
 
 .life-l, .life-i, .life-f, .life-e {
@@ -269,6 +273,9 @@ nav {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: perspective(500px) rotateX(-5deg);
   position: relative;
+  background-clip: initial;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: white;
 }
 
 .life-l {
