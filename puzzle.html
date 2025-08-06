@@ -5,97 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Puzzle</title>
     <link rel="stylesheet" href="puzzlestyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <body>
-      <div class="top-banner">
-          Why hire a coder MBA do do a writer's job? <a href="#">Learn more here</a>
-      </div>
-        
-      <!-- Navigation -->
-      <nav>
-          <div class="logo">
-              <img src="./images/puzzle_logo_two.png" alt="Puzzle Logo" />
-              <span class="logo-text">Puzzle</span>
-          </div>
-      </nav>
+    <div class="top-banner">
+        Why hire a coder MBA to do a writer's job? <a href="#">Learn more here</a>
+    </div>
+      
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="./images/puzzle_logo_two.png" alt="Puzzle Logo" />
+            <span class="logo-text">Puzzle</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Solutions</a>
+            <a href="#" class="nav-link">Why Puzzle</a>
+            <a href="#" class="nav-link">Pricing</a>
+            <a href="#" class="nav-link">Resources</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="#" class="login">Sign In</a>
+            <a href="#" class="demo-btn">Book a Demo</a>
+            <a href="#" class="cta-btn">Get Started</a>
+        </div>
+    </nav>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-        <!-- Background -->
-        <rect width="800" height="600" fill="#151823" rx="8" />
-      
-        <!-- Game path with gradient -->
-        <defs>
-          <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#38d9a9" />
-            <stop offset="50%" stop-color="#74c0fc" />
-            <stop offset="100%" stop-color="#da77f2" />
-          </linearGradient>
-        </defs>
+    <!-- Game Path Section -->
+    <section class="game-section">
+      <div class="game-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" class="game-svg">
+          <!-- Background -->
+          <rect width="800" height="600" fill="transparent" rx="8" />
         
-        <!-- Game path background -->
-        <path d="M100,170 C100,170 150,200 220,200 C290,200 330,240 400,240 C470,240 510,200 580,200 C650,200 700,240 700,240" 
-              stroke="url(#pathGradient)" stroke-width="12" fill="none" stroke-linecap="round" />
-        
-        <!-- Stage circles with modern style -->
-        <!-- Formation -->
-        <rect x="65" y="135" width="70" height="70" rx="8" fill="#151823" stroke="#38d9a9" stroke-width="3" />
-        <rect x="71" y="141" width="58" height="58" rx="6" fill="#38d9a9" />
-        <text x="100" y="175" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#151823">START</text>
-        
-        <!-- Pre-seed -->
-        <rect x="180" y="160" width="80" height="80" rx="8" fill="#151823" stroke="#4dabf7" stroke-width="3" />
-        <rect x="186" y="166" width="68" height="68" rx="6" fill="#4dabf7" />
-        <text x="220" y="205" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#151823">PRE-SEED</text>
-        
-        <!-- Seed -->
-        <rect x="295" y="205" width="70" height="70" rx="8" fill="#151823" stroke="#5ecc62" stroke-width="3" />
-        <rect x="301" y="211" width="58" height="58" rx="6" fill="#5ecc62" />
-        <text x="330" y="245" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#151823">SEED</text>
-        
-        <!-- Series A -->
-        <rect x="425" y="205" width="70" height="70" rx="8" fill="#151823" stroke="#74c0fc" stroke-width="3" />
-        <rect x="431" y="211" width="58" height="58" rx="6" fill="#74c0fc" />
-        <text x="460" y="245" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#151823">SERIES A</text>
-        
-        <!-- Series B/C -->
-        <rect x="540" y="160" width="80" height="80" rx="8" fill="#151823" stroke="#da77f2" stroke-width="3" />
-        <rect x="546" y="166" width="68" height="68" rx="6" fill="#da77f2" />
-        <text x="580" y="205" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#151823">SERIES B/C</text>
-        
-        <!-- Exit/IPO -->
-        <rect x="665" y="205" width="70" height="70" rx="8" fill="#151823" stroke="#fd7e14" stroke-width="3" />
-        <rect x="671" y="211" width="58" height="58" rx="6" fill="#fd7e14" />
-        <text x="700" y="245" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#151823">EXIT/IPO</text>
-      </svg>
-      
-      <!-- Hero Section -->
-      <section class="hero">
-          <div class="gradient-circle"></div>
-          <div class="stage-label">by Tori Jones</div>
-          <h1 class="hero-title">The Startup Accounting Game of Life</h1>
-          <p class="hero-subtitle">We power the next generation of ambitious companies. The world needs your ingenuity, and we set you up for lasting success.</p>
-      </section>
-      
-      <!-- Solutions Section -->
-      <section class="solutions">
-          <h2 class="solutions-title">Solutions: Built For Your Business</h2>
+          <!-- Game path with gradient -->
+          <defs>
+            <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00d4aa" />
+              <stop offset="50%" stop-color="#4f46e5" />
+              <stop offset="100%" stop-color="#7c3aed" />
+            </linearGradient>
+          </defs>
           
-          <div class="solution-card">
-              <h3 class="solution-type">SaaS</h3>
-              <p class="testimonial">"You'll get it within the first 5 minutes of using the product. Once we got on Puzzle, we could take care of financial housekeeping in minutes rather than hours."</p>
-              <div class="testimonial-author">
-                  <img src="/api/placeholder/50/50" alt="Royce Branning" class="author-avatar">
-                  <div class="author-info">
-                      <span class="author-name">Royce Branning</span>
-                      <span class="author-title">CEO at Clearspace</span>
-                  </div>
-              </div>
-              <div class="solution-arrow">→</div>
-          </div>
-      </section>
-  </body>
+          <!-- Game path background -->
+          <path d="M100,170 C100,170 150,200 220,200 C290,200 330,240 400,240 C470,240 510,200 580,200 C650,200 700,240 700,240" 
+                stroke="url(#pathGradient)" stroke-width="12" fill="none" stroke-linecap="round" />
+          
+          <!-- Stage circles with modern style -->
+          <!-- Formation -->
+          <rect x="65" y="135" width="70" height="70" rx="12" fill="#ffffff" stroke="#00d4aa" stroke-width="3" />
+          <rect x="71" y="141" width="58" height="58" rx="8" fill="#00d4aa" />
+          <text x="100" y="175" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">START</text>
+          
+          <!-- Pre-seed -->
+          <rect x="180" y="160" width="80" height="80" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="3" />
+          <rect x="186" y="166" width="68" height="68" rx="8" fill="#4f46e5" />
+          <text x="220" y="205" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">PRE-SEED</text>
+          
+          <!-- Seed -->
+          <rect x="295" y="205" width="70" height="70" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="3" />
+          <rect x="301" y="211" width="58" height="58" rx="8" fill="#10b981" />
+          <text x="330" y="245" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">SEED</text>
+          
+          <!-- Series A -->
+          <rect x="425" y="205" width="70" height="70" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="3" />
+          <rect x="431" y="211" width="58" height="58" rx="8" fill="#3b82f6" />
+          <text x="460" y="245" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">SERIES A</text>
+          
+          <!-- Series B/C -->
+          <rect x="540" y="160" width="80" height="80" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="3" />
+          <rect x="546" y="166" width="68" height="68" rx="8" fill="#7c3aed" />
+          <text x="580" y="205" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">SERIES B/C</text>
+          
+          <!-- Exit/IPO -->
+          <rect x="665" y="205" width="70" height="70" rx="12" fill="#ffffff" stroke="#f59e0b" stroke-width="3" />
+          <rect x="671" y="211" width="58" height="58" rx="8" fill="#f59e0b" />
+          <text x="700" y="245" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">EXIT/IPO</text>
+        </svg>
+      </div>
+    </section>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="stage-label">by Tori Jones</div>
+            <h1 class="hero-title">The Startup Accounting Game of Life</h1>
+            <p class="hero-subtitle">We power the next generation of ambitious companies. The world needs your ingenuity, and we set you up for lasting success.</p>
+            <div class="hero-buttons">
+                <a href="#" class="primary-btn">Get Started</a>
+                <a href="#" class="secondary-btn">Book a Demo</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Solutions Section -->
+    <section class="solutions">
+        <div class="solutions-container">
+            <h2 class="solutions-title">Solutions: Built For Your Business</h2>
+            
+            <div class="solution-cards">
+                <div class="solution-card">
+                    <div class="solution-header">
+                        <h3 class="solution-type">SaaS</h3>
+                        <div class="solution-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="testimonial">"You'll get it within the first 5 minutes of using the product. Once we got on Puzzle, we could take care of financial housekeeping in minutes rather than hours."</p>
+                    <div class="testimonial-author">
+                        <img src="/api/placeholder/50/50" alt="Royce Branning" class="author-avatar">
+                        <div class="author-info">
+                            <span class="author-name">Royce Branning</span>
+                            <span class="author-title">CEO at Clearspace</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
   </body>
 </html>
-
