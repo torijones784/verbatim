@@ -26,8 +26,14 @@
 }
 
 body {
-  background-color: var(--puzzle-white);
-  color: var(--puzzle-gray-900);
+  background: linear-gradient(135deg, 
+    #1a1a2e 0%, 
+    #16213e 25%, 
+    #0f3460 50%, 
+    #533483 75%, 
+    #16213e 100%);
+  min-height: 100vh;
+  color: var(--puzzle-white);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -63,12 +69,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 16px 48px;
-  background-color: var(--puzzle-white);
-  border-bottom: 1px solid var(--puzzle-gray-100);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(8px);
 }
 
 .logo {
@@ -160,11 +166,8 @@ nav {
 
 /* Game Section */
 .game-section {
-  padding: 80px 20px 40px;
-  background: linear-gradient(135deg, 
-    var(--puzzle-gray-50) 0%, 
-    rgba(0, 212, 170, 0.02) 50%, 
-    var(--puzzle-gray-50) 100%);
+  padding: 40px 20px 60px;
+  background: transparent;
 }
 
 .game-container {
@@ -176,7 +179,7 @@ nav {
   width: 100%;
   height: auto;
   max-height: 500px;
-  filter: drop-shadow(0 4px 6px rgb(0 0 0 / 0.05));
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
 }
 
 /* Stage hover effects */
@@ -201,8 +204,8 @@ nav {
 
 /* Hero Section */
 .hero {
-  padding: 80px 20px 120px;
-  background-color: var(--puzzle-white);
+  padding: 60px 20px 40px;
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -210,15 +213,15 @@ nav {
 .hero::before {
   content: '';
   position: absolute;
-  top: -200px;
+  top: -100px;
   left: 50%;
   transform: translateX(-50%);
-  width: 1400px;
-  height: 1400px;
+  width: 1000px;
+  height: 1000px;
   border-radius: 50%;
   background: radial-gradient(circle, 
-    rgba(0, 212, 170, 0.08) 0%, 
-    rgba(124, 58, 237, 0.04) 50%, 
+    rgba(0, 212, 170, 0.15) 0%, 
+    rgba(124, 58, 237, 0.1) 50%, 
     transparent 70%);
   z-index: 0;
 }
@@ -233,7 +236,7 @@ nav {
 
 .stage-label {
   font-size: 14px;
-  color: var(--puzzle-gray-500);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 24px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -247,8 +250,8 @@ nav {
   margin: 0 auto 24px;
   line-height: 1.1;
   background: linear-gradient(135deg, 
-    var(--puzzle-gray-900) 0%, 
-    var(--puzzle-gray-700) 100%);
+    var(--puzzle-white) 0%, 
+    rgba(255, 255, 255, 0.8) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -259,7 +262,7 @@ nav {
   margin: 0 auto 40px;
   font-size: 20px;
   line-height: 1.6;
-  color: var(--puzzle-gray-600);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 400;
 }
 
@@ -308,8 +311,10 @@ nav {
 
 /* Solutions Section */
 .solutions {
-  padding: 120px 20px;
-  background-color: var(--puzzle-gray-50);
+  padding: 80px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .solutions-container {
@@ -322,7 +327,7 @@ nav {
   font-weight: 700;
   margin-bottom: 64px;
   text-align: center;
-  color: var(--puzzle-gray-900);
+  color: var(--puzzle-white);
 }
 
 .solution-cards {
@@ -334,18 +339,20 @@ nav {
 }
 
 .solution-card {
-  background-color: var(--puzzle-white);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 40px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  border: 1px solid var(--puzzle-gray-100);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
   position: relative;
 }
 
 .solution-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .solution-header {
@@ -358,18 +365,18 @@ nav {
 .solution-type {
   font-size: 28px;
   font-weight: 700;
-  color: var(--puzzle-gray-900);
+  color: var(--puzzle-white);
 }
 
 .solution-arrow {
   width: 48px;
   height: 48px;
-  background-color: var(--puzzle-gray-100);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--puzzle-gray-600);
+  color: rgba(255, 255, 255, 0.7);
   transition: all 0.2s ease;
 }
 
@@ -382,7 +389,7 @@ nav {
 .testimonial {
   font-size: 18px;
   margin-bottom: 32px;
-  color: var(--puzzle-gray-600);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.7;
   font-weight: 400;
 }
@@ -408,13 +415,13 @@ nav {
 
 .author-name {
   font-weight: 600;
-  color: var(--puzzle-gray-900);
+  color: var(--puzzle-white);
   font-size: 16px;
 }
 
 .author-title {
   font-size: 14px;
-  color: var(--puzzle-gray-500);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 400;
 }
 
