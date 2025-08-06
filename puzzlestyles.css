@@ -273,19 +273,22 @@ nav {
 
 .life-l {
   background: linear-gradient(145deg, #e91e63, #c2185b);
+  color: white;
 }
 
 .life-i {
   background: linear-gradient(145deg, #2196f3, #1976d2);
+  color: white;
 }
 
 .life-f {
   background: linear-gradient(145deg, #4caf50, #388e3c);
+  color: white;
 }
 
 .life-e {
   background: linear-gradient(145deg, #ffeb3b, #fbc02d);
-  color: #333;
+  color: white;
 }
 
 .hero-subtitle {
