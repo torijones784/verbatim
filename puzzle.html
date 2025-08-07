@@ -72,12 +72,11 @@
     // Initialize the game
     function initGame() {
       const container = document.getElementById('game-container');
-      const containerRect = container.getBoundingClientRect();
       const centerX = 50; // percentage
       const centerY = 50; // percentage
-      const radius = 35; // percentage from center
+      const radius = 150; // pixels from center
       
-      // Create tiles in circular positions
+      // Create tiles in circular positions around the div
       stages.forEach((stage, index) => {
         const tile = document.createElement('div');
         tile.className = 'game-tile';
@@ -88,17 +87,18 @@
           </div>
         `;
         
-        // Position tiles in a circle
+        // Position tiles in a circle around the center of the container
         const angle = (index / stages.length) * 2 * Math.PI;
-        const x = centerX + radius * Math.cos(angle);
-        const y = centerY + radius * Math.sin(angle);
+        const x = centerX + (radius / container.offsetWidth * 100) * Math.cos(angle);
+        const y = centerY + (radius / container.offsetHeight * 100) * Math.sin(angle);
         
         tile.style.left = x + '%';
         tile.style.top = y + '%';
+        tile.style.transform = 'translate(-50%, -50%)';
         
         // Set different spin speeds for wheel effect
-        tile.style.setProperty('--spin-speed', (2 + Math.random() * 3) + 's');
-        tile.style.setProperty('--spin-delay', Math.random() * 1 + 's');
+        tile.style.setProperty('--spin-speed', (1.5 + Math.random() * 2) + 's');
+        tile.style.setProperty('--spin-delay', Math.random() * 0.5 + 's');
         
         container.appendChild(tile);
         tiles.push(tile);
