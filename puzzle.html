@@ -37,64 +37,20 @@
         <div class="hero-container">
             <div class="stage-label">by Tori Jones</div>
             <h1 class="hero-title">The Startup Accounting Game of <span class="life-text"><span class="life-l">L</span><span class="life-i">I</span><span class="life-f">F</span><span class="life-e">E</span></span></h1>
-            <p class="hero-subtitle">We power the next generation of ambitious companies. The world needs your ingenuity, and we set you up for lasting success.</p>
+            <p class="hero-subtitle">You found your great idea. Now see how Puzzle can support you at every stage—from formation to exit—with real-time financial insights, automated bookkeeping, and the tools ambitious founders need to build lasting companies.</p>
             <div class="hero-buttons">
-                <a href="#" class="primary-btn">Get Started</a>
+                <a href="#" class="primary-btn" id="game-btn">Get Started</a>
             </div>
         </div>
     </section>
 
     <!-- Game Path Section -->
     <section class="game-section">
-      <div class="game-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" class="game-svg">
-          <!-- Background -->
-          <rect width="800" height="600" fill="transparent" rx="8" />
-        
-          <!-- Game path with gradient -->
-          <defs>
-            <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#50fba9" />
-              <stop offset="50%" stop-color="#4f46e5" />
-              <stop offset="100%" stop-color="#7c3aed" />
-            </linearGradient>
-          </defs>
-          
-          <!-- Game path background -->
-          <path d="M100,170 C100,170 150,200 220,200 C290,200 330,240 400,240 C470,240 510,200 580,200 C650,200 700,240 700,240" 
-                stroke="url(#pathGradient)" stroke-width="12" fill="none" stroke-linecap="round" />
-          
-          <!-- Stage circles with modern style -->
-          <!-- Formation -->
-          <rect x="65" y="135" width="70" height="70" rx="12" fill="#ffffff" stroke="#50fba9" stroke-width="3" />
-          <rect x="71" y="141" width="58" height="58" rx="8" fill="#50fba9" />
-          <text x="100" y="175" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">START</text>
-          
-          <!-- Pre-seed -->
-          <rect x="180" y="160" width="80" height="80" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="3" />
-          <rect x="186" y="166" width="68" height="68" rx="8" fill="#4f46e5" />
-          <text x="220" y="205" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">PRE-SEED</text>
-          
-          <!-- Seed -->
-          <rect x="295" y="205" width="70" height="70" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="3" />
-          <rect x="301" y="211" width="58" height="58" rx="8" fill="#10b981" />
-          <text x="330" y="245" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">SEED</text>
-          
-          <!-- Series A -->
-          <rect x="425" y="205" width="70" height="70" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="3" />
-          <rect x="431" y="211" width="58" height="58" rx="8" fill="#3b82f6" />
-          <text x="460" y="245" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">SERIES A</text>
-          
-          <!-- Series B/C -->
-          <rect x="540" y="160" width="80" height="80" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="3" />
-          <rect x="546" y="166" width="68" height="68" rx="8" fill="#7c3aed" />
-          <text x="580" y="205" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">SERIES B/C</text>
-          
-          <!-- Exit/IPO -->
-          <rect x="665" y="205" width="70" height="70" rx="12" fill="#ffffff" stroke="#f59e0b" stroke-width="3" />
-          <rect x="671" y="211" width="58" height="58" rx="8" fill="#f59e0b" />
-          <text x="700" y="245" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff">EXIT/IPO</text>
-        </svg>
+      <div class="game-container" id="game-container">
+        <!-- Scattered tiles will be generated here by JavaScript -->
+        <div class="center-stage" id="center-stage">
+          <div class="stage-placeholder">?</div>
+        </div>
       </div>
     </section>
     
@@ -126,4 +82,122 @@
         </div>
     </section>
   </body>
+
+  <script>
+    // Game stages data
+    const stages = [
+      { name: 'PRE-SEED', color: '#4f46e5', bgColor: '#4f46e5' },
+      { name: 'SEED', color: '#10b981', bgColor: '#10b981' },
+      { name: 'SERIES A', color: '#3b82f6', bgColor: '#3b82f6' },
+      { name: 'SERIES B/C', color: '#7c3aed', bgColor: '#7c3aed' },
+      { name: 'EXIT/IPO', color: '#f59e0b', bgColor: '#f59e0b' }
+    ];
+
+    let currentStage = -1;
+    let gameStarted = false;
+    let tiles = [];
+
+    // Initialize the game
+    function initGame() {
+      const container = document.getElementById('game-container');
+      
+      // Create scattered tiles
+      stages.forEach((stage, index) => {
+        const tile = document.createElement('div');
+        tile.className = 'game-tile';
+        tile.setAttribute('data-stage', index);
+        tile.innerHTML = `
+          <div class="tile-inner" style="background-color: ${stage.bgColor};">
+            <span class="tile-text">${stage.name}</span>
+          </div>
+        `;
+        
+        // Random position within container
+        const randomX = Math.random() * 80 + 10; // 10-90%
+        const randomY = Math.random() * 60 + 20; // 20-80%
+        tile.style.left = randomX + '%';
+        tile.style.top = randomY + '%';
+        
+        container.appendChild(tile);
+        tiles.push(tile);
+      });
+    }
+
+    // Spin all tiles animation
+    function spinTiles() {
+      tiles.forEach((tile, index) => {
+        tile.classList.add('spinning');
+        
+        // Random spinning path
+        const randomX = Math.random() * 80 + 10;
+        const randomY = Math.random() * 60 + 20;
+        
+        setTimeout(() => {
+          tile.style.left = randomX + '%';
+          tile.style.top = randomY + '%';
+        }, Math.random() * 2000);
+      });
+    }
+
+    // Move tile to center
+    function moveTileToCenter(stageIndex) {
+      const tile = tiles[stageIndex];
+      const centerStage = document.getElementById('center-stage');
+      
+      setTimeout(() => {
+        // Stop spinning
+        tiles.forEach(t => t.classList.remove('spinning'));
+        
+        // Move current tile to center
+        tile.classList.add('centered');
+        tile.style.left = '50%';
+        tile.style.top = '50%';
+        tile.style.transform = 'translate(-50%, -50%) scale(1.2)';
+        tile.style.zIndex = '100';
+        
+        // Hide placeholder
+        centerStage.querySelector('.stage-placeholder').style.display = 'none';
+        
+      }, 5000);
+    }
+
+    // Game button click handler
+    document.getElementById('game-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      if (!gameStarted) {
+        // First click - start the game
+        gameStarted = true;
+        this.textContent = 'Spin';
+        currentStage = 0;
+        
+        spinTiles();
+        moveTileToCenter(currentStage);
+        
+      } else {
+        // Subsequent clicks - move to next stage
+        if (currentStage < stages.length - 1) {
+          // Hide current centered tile
+          if (currentStage >= 0) {
+            tiles[currentStage].classList.remove('centered');
+            tiles[currentStage].style.display = 'none';
+          }
+          
+          currentStage++;
+          spinTiles();
+          moveTileToCenter(currentStage);
+          
+        } else {
+          // Game completed
+          this.textContent = 'Play Again';
+          this.addEventListener('click', function() {
+            location.reload();
+          });
+        }
+      }
+    });
+
+    // Initialize game when page loads
+    document.addEventListener('DOMContentLoaded', initGame);
+  </script>
 </html>
