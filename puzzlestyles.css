@@ -159,7 +159,7 @@ nav {
 
 /* Game Section */
 .game-section {
-  padding: 40px 20px 60px;
+  padding: 40px 20px 120px;
   background: transparent;
 }
 
@@ -431,121 +431,7 @@ nav {
   background-color: var(--puzzle-gray-50);
 }
 
-/* Solutions Section */
-.solutions {
-  padding: 80px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.solutions-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.solutions-title {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 700;
-  margin-bottom: 64px;
-  text-align: center;
-  color: var(--puzzle-white);
-}
-
-.solution-cards {
-  display: grid;
-  gap: 32px;
-  grid-template-columns: 1fr;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.solution-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.solution-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.solution-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 24px;
-}
-
-.solution-type {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--puzzle-white);
-}
-
-.solution-arrow {
-  width: 48px;
-  height: 48px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.7);
-  transition: all 0.2s ease;
-}
-
-.solution-card:hover .solution-arrow {
-  background-color: var(--puzzle-green);
-  color: var(--puzzle-gray-900);
-  transform: rotate(45deg);
-}
-
-.testimonial {
-  font-size: 18px;
-  margin-bottom: 32px;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.7;
-  font-weight: 400;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.author-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.author-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.author-name {
-  font-weight: 600;
-  color: var(--puzzle-white);
-  font-size: 16px;
-}
-
-.author-title {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 400;
-}
+/* Solutions Section - REMOVED */
 
 /* Responsive Design */
 @media (max-width: 768px) {
