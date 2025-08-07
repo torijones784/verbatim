@@ -337,7 +337,7 @@ nav {
 
 /* Spinning animation */
 .primary-btn.spinning {
-  animation: spinColorChange 2s ease-in-out;
+  animation: spinColorChange 3s linear;
 }
 
 @keyframes spinColorChange {
@@ -345,20 +345,36 @@ nav {
     transform: rotate(0deg);
     background: linear-gradient(145deg, #e91e63, #c2185b); /* Pink like L */
   }
-  25% {
-    transform: rotate(90deg);
+  12.5% {
+    transform: rotate(180deg);
     background: linear-gradient(145deg, #2196f3, #1976d2); /* Blue like I */
   }
-  50% {
-    transform: rotate(180deg);
+  25% {
+    transform: rotate(360deg);
     background: linear-gradient(145deg, #4caf50, #388e3c); /* Green like F */
   }
+  37.5% {
+    transform: rotate(540deg);
+    background: linear-gradient(145deg, #ffeb3b, #fbc02d); /* Yellow like E */
+  }
+  50% {
+    transform: rotate(720deg);
+    background: linear-gradient(145deg, #e91e63, #c2185b); /* Pink like L */
+  }
+  62.5% {
+    transform: rotate(900deg);
+    background: linear-gradient(145deg, #2196f3, #1976d2); /* Blue like I */
+  }
   75% {
-    transform: rotate(270deg);
+    transform: rotate(1080deg);
+    background: linear-gradient(145deg, #4caf50, #388e3c); /* Green like F */
+  }
+  87.5% {
+    transform: rotate(1260deg);
     background: linear-gradient(145deg, #ffeb3b, #fbc02d); /* Yellow like E */
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(1440deg);
     background-color: var(--puzzle-green); /* Back to original */
   }
 }
