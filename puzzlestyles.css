@@ -159,101 +159,20 @@ nav {
 
 /* Game Section */
 .game-section {
-  padding: 40px 20px 120px;
+  padding: 40px 20px 60px;
   background: transparent;
 }
 
 .game-container {
   max-width: 1200px;
   margin: 0 auto;
-  height: 500px;
-  position: relative;
-  border: 2px dashed rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  overflow: hidden;
 }
 
-.center-stage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
-  border: 3px dashed rgba(255, 255, 255, 0.4);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-}
-
-.stage-placeholder {
-  font-size: 48px;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 700;
-}
-
-.game-tile {
-  position: absolute;
-  width: 100px;
-  height: 80px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.game-tile.spinning {
-  animation: spin 5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.game-tile.centered {
-  z-index: 100;
-}
-
-.tile-inner {
+.game-svg {
   width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  border: 3px solid rgba(255, 255, 255, 0.9);
-  transition: all 0.3s ease;
-}
-
-.tile-inner:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-}
-
-.tile-text {
-  color: white;
-  font-weight: 700;
-  font-size: 11px;
-  text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-family: 'Inter', sans-serif;
-  letter-spacing: 0.5px;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg) translateX(0px) translateY(0px);
-  }
-  25% {
-    transform: rotate(90deg) translateX(50px) translateY(-30px);
-  }
-  50% {
-    transform: rotate(180deg) translateX(-20px) translateY(40px);
-  }
-  75% {
-    transform: rotate(270deg) translateX(30px) translateY(-20px);
-  }
-  100% {
-    transform: rotate(360deg) translateX(0px) translateY(0px);
-  }
+  height: auto;
+  max-height: 500px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
 }
 
 /* Stage hover effects */
@@ -406,12 +325,42 @@ nav {
   text-decoration: none;
   transition: all 0.2s ease;
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.06);
+  position: relative;
+  overflow: hidden;
 }
 
 .primary-btn:hover {
   background-color: #42e094;
   transform: translateY(-2px);
   box-shadow: 0 8px 16px 0 rgb(0 0 0 / 0.15);
+}
+
+/* Spinning animation */
+.primary-btn.spinning {
+  animation: spinColorChange 2s ease-in-out;
+}
+
+@keyframes spinColorChange {
+  0% {
+    transform: rotate(0deg);
+    background: linear-gradient(145deg, #e91e63, #c2185b); /* Pink like L */
+  }
+  25% {
+    transform: rotate(90deg);
+    background: linear-gradient(145deg, #2196f3, #1976d2); /* Blue like I */
+  }
+  50% {
+    transform: rotate(180deg);
+    background: linear-gradient(145deg, #4caf50, #388e3c); /* Green like F */
+  }
+  75% {
+    transform: rotate(270deg);
+    background: linear-gradient(145deg, #ffeb3b, #fbc02d); /* Yellow like E */
+  }
+  100% {
+    transform: rotate(360deg);
+    background-color: var(--puzzle-green); /* Back to original */
+  }
 }
 
 .secondary-btn {
@@ -431,7 +380,121 @@ nav {
   background-color: var(--puzzle-gray-50);
 }
 
-/* Solutions Section - REMOVED */
+/* Solutions Section */
+.solutions {
+  padding: 80px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.solutions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solutions-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  margin-bottom: 64px;
+  text-align: center;
+  color: var(--puzzle-white);
+}
+
+.solution-cards {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.solution-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.solution-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.solution-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.solution-type {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--puzzle-white);
+}
+
+.solution-arrow {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+}
+
+.solution-card:hover .solution-arrow {
+  background-color: var(--puzzle-green);
+  color: var(--puzzle-gray-900);
+  transform: rotate(45deg);
+}
+
+.testimonial {
+  font-size: 18px;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.author-name {
+  font-weight: 600;
+  color: var(--puzzle-white);
+  font-size: 16px;
+}
+
+.author-title {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -451,24 +514,6 @@ nav {
   
   .game-section {
     padding: 60px 20px 20px;
-  }
-  
-  .game-container {
-    height: 400px;
-  }
-  
-  .game-tile {
-    width: 80px;
-    height: 60px;
-  }
-  
-  .tile-text {
-    font-size: 9px;
-  }
-  
-  .center-stage {
-    width: 100px;
-    height: 100px;
   }
   
   .hero {
@@ -504,14 +549,5 @@ nav {
   
   .solution-arrow {
     align-self: flex-end;
-  }
-  
-  .game-tile {
-    width: 70px;
-    height: 50px;
-  }
-  
-  .tile-text {
-    font-size: 8px;
   }
 }
