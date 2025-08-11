@@ -243,7 +243,30 @@ nav {
 /* Stage states - Default grayed out */
 .stage-group {
   transition: all 0.5s ease;
-  transform-origin: center;
+}
+
+.stage-group[data-stage="0"] {
+  transform-origin: 100px 300px; /* START tile center */
+}
+
+.stage-group[data-stage="1"] {
+  transform-origin: 250px 300px; /* PRE-SEED tile center */
+}
+
+.stage-group[data-stage="2"] {
+  transform-origin: 450px 300px; /* SEED tile center */
+}
+
+.stage-group[data-stage="3"] {
+  transform-origin: 650px 300px; /* SERIES A tile center */
+}
+
+.stage-group[data-stage="4"] {
+  transform-origin: 805px 300px; /* SERIES B/C tile center */
+}
+
+.stage-group[data-stage="5"] {
+  transform-origin: 900px 300px; /* EXIT/IPO tile center */
 }
 
 .stage-outer {
