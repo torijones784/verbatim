@@ -39,7 +39,7 @@
             <h1 class="hero-title">The Startup Accounting Game of <span class="life-text"><span class="life-l">L</span><span class="life-i">I</span><span class="life-f">F</span><span class="life-e">E</span></span></h1>
             <p class="hero-subtitle">You found your great idea. Now see how Puzzle can support you at every stage—from formation to exit—with real-time financial insights, automated bookkeeping, and the tools ambitious founders need to build lasting companies.</p>
             <div class="hero-buttons">
-                <a href="#" class="primary-btn" onclick="spinButton(this); return false;">Spin</a>
+                <a href="#" class="primary-btn" onclick="spinButton(this); return false;">Get Started</a>
             </div>
         </div>
     </section>
@@ -245,10 +245,6 @@
           button.textContent = 'Spin';
           currentStage = -1;
           
-          // Hide all info cards
-          const allInfoCards = document.querySelectorAll('.stage-info');
-          allInfoCards.forEach(card => card.style.display = 'none');
-          
           // Gray out all stages again
           for (let i = 0; i < totalStages; i++) {
             const stageGroup = document.querySelector(`[data-stage="${i}"].stage-group`);
@@ -263,21 +259,9 @@
     }
 
     function activateStage(stage) {
-      // Hide all stage info cards first
-      const allInfoCards = document.querySelectorAll('.stage-info');
-      allInfoCards.forEach(card => card.style.display = 'none');
-      
       const stageGroup = document.querySelector(`[data-stage="${stage}"].stage-group`);
-      const stageInfo = document.querySelector(`[data-info="${stage}"]`);
       
       if (stageGroup) stageGroup.classList.add('active');
-      
-      // Show corresponding info card with slight delay for better UX
-      if (stageInfo) {
-        setTimeout(() => {
-          stageInfo.style.display = 'block';
-        }, 300);
-      }
     }
 
     function grayOutStage(stage) {

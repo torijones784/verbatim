@@ -171,53 +171,9 @@ nav {
 .game-svg {
   width: 100%;
   height: auto;
-  max-height: 500px;
+  max-height: 400px;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
   overflow: visible;
-}
-
-/* Stage Information Cards */
-.stage-info-container {
-  margin-top: 40px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.stage-info {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 32px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.stage-info h3 {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--puzzle-white);
-  margin-bottom: 16px;
-}
-
-.stage-info p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Stage hover effects */
@@ -246,27 +202,27 @@ nav {
 }
 
 .stage-group[data-stage="0"] {
-  transform-origin: 100px 300px; /* START tile center */
+  transform-origin: 100px 150px; /* START tile center */
 }
 
 .stage-group[data-stage="1"] {
-  transform-origin: 250px 300px; /* PRE-SEED tile center */
+  transform-origin: 250px 150px; /* PRE-SEED tile center */
 }
 
 .stage-group[data-stage="2"] {
-  transform-origin: 450px 300px; /* SEED tile center */
+  transform-origin: 400px 150px; /* SEED tile center */
 }
 
 .stage-group[data-stage="3"] {
-  transform-origin: 650px 300px; /* SERIES A tile center */
+  transform-origin: 550px 150px; /* SERIES A tile center */
 }
 
 .stage-group[data-stage="4"] {
-  transform-origin: 805px 300px; /* SERIES B/C tile center */
+  transform-origin: 700px 150px; /* SERIES B/C tile center */
 }
 
 .stage-group[data-stage="5"] {
-  transform-origin: 900px 300px; /* EXIT/IPO tile center */
+  transform-origin: 850px 150px; /* EXIT/IPO tile center */
 }
 
 .stage-outer {
