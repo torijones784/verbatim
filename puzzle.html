@@ -61,39 +61,58 @@
           </defs>
           
           <!-- Game path background -->
-          <path d="M100,300 C100,300 180,300 250,300 C320,300 380,300 450,300 C520,300 580,300 650,300 C720,300 800,300 900,300" 
+          <path d="M100,300 C150,280 180,320 250,300 C300,280 350,320 450,300 C500,280 550,320 650,300 C700,280 750,320 805,300 C850,280 880,320 900,300" 
                 stroke="url(#pathGradient)" stroke-width="12" fill="none" stroke-linecap="round" />
+          
+          <!-- Dummy tiles for visual continuity -->
+          <circle cx="175" cy="290" r="8" fill="rgba(255,255,255,0.3)" />
+          <circle cx="350" cy="310" r="8" fill="rgba(255,255,255,0.3)" />
+          <circle cx="550" cy="290" r="8" fill="rgba(255,255,255,0.3)" />
+          <circle cx="725" cy="310" r="8" fill="rgba(255,255,255,0.3)" />
+          <circle cx="852" cy="290" r="8" fill="rgba(255,255,255,0.3)" />
           
           <!-- Stage circles with modern style -->
           <!-- Formation -->
-          <rect x="65" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#50fba9" stroke-width="3" class="stage-outer" data-stage="0" />
-          <rect x="71" y="271" width="58" height="58" rx="8" fill="#50fba9" class="stage-inner" data-stage="0" />
-          <text x="100" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="0">START</text>
+          <g class="stage-group" data-stage="0">
+            <rect x="65" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#50fba9" stroke-width="3" class="stage-outer" />
+            <rect x="71" y="271" width="58" height="58" rx="8" fill="#50fba9" class="stage-inner" />
+            <text x="100" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">START</text>
+          </g>
           
           <!-- Pre-seed -->
-          <rect x="215" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="3" class="stage-outer" data-stage="1" />
-          <rect x="221" y="271" width="58" height="58" rx="8" fill="#4f46e5" class="stage-inner" data-stage="1" />
-          <text x="250" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="1">PRE-SEED</text>
+          <g class="stage-group" data-stage="1">
+            <rect x="215" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="3" class="stage-outer" />
+            <rect x="221" y="271" width="58" height="58" rx="8" fill="#4f46e5" class="stage-inner" />
+            <text x="250" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">PRE-SEED</text>
+          </g>
           
           <!-- Seed -->
-          <rect x="415" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="3" class="stage-outer" data-stage="2" />
-          <rect x="421" y="271" width="58" height="58" rx="8" fill="#10b981" class="stage-inner" data-stage="2" />
-          <text x="450" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="2">SEED</text>
+          <g class="stage-group" data-stage="2">
+            <rect x="415" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="3" class="stage-outer" />
+            <rect x="421" y="271" width="58" height="58" rx="8" fill="#10b981" class="stage-inner" />
+            <text x="450" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SEED</text>
+          </g>
           
           <!-- Series A -->
-          <rect x="615" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="3" class="stage-outer" data-stage="3" />
-          <rect x="621" y="271" width="58" height="58" rx="8" fill="#3b82f6" class="stage-inner" data-stage="3" />
-          <text x="650" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="3">SERIES A</text>
+          <g class="stage-group" data-stage="3">
+            <rect x="615" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="3" class="stage-outer" />
+            <rect x="621" y="271" width="58" height="58" rx="8" fill="#3b82f6" class="stage-inner" />
+            <text x="650" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SERIES A</text>
+          </g>
           
           <!-- Series B/C -->
-          <rect x="765" y="265" width="80" height="70" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="3" class="stage-outer" data-stage="4" />
-          <rect x="771" y="271" width="68" height="58" rx="8" fill="#7c3aed" class="stage-inner" data-stage="4" />
-          <text x="805" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="4">SERIES B/C</text>
+          <g class="stage-group" data-stage="4">
+            <rect x="765" y="265" width="80" height="70" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="3" class="stage-outer" />
+            <rect x="771" y="271" width="68" height="58" rx="8" fill="#7c3aed" class="stage-inner" />
+            <text x="805" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SERIES B/C</text>
+          </g>
           
           <!-- Exit/IPO -->
-          <rect x="865" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#f59e0b" stroke-width="3" class="stage-outer" data-stage="5" />
-          <rect x="871" y="271" width="58" height="58" rx="8" fill="#f59e0b" class="stage-inner" data-stage="5" />
-          <text x="900" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="5">EXIT/IPO</text>
+          <g class="stage-group" data-stage="5">
+            <rect x="865" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#f59e0b" stroke-width="3" class="stage-outer" />
+            <rect x="871" y="271" width="58" height="58" rx="8" fill="#f59e0b" class="stage-inner" />
+            <text x="900" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">EXIT/IPO</text>
+          </g>
         </svg>
           </defs>
           
@@ -232,21 +251,11 @@
           
           // Gray out all stages again
           for (let i = 0; i < totalStages; i++) {
-            const stageOuter = document.querySelector(`[data-stage="${i}"].stage-outer`);
-            const stageInner = document.querySelector(`[data-stage="${i}"].stage-inner`);
-            const stageText = document.querySelector(`[data-stage="${i}"].stage-text`);
+            const stageGroup = document.querySelector(`[data-stage="${i}"].stage-group`);
             
-            if (stageOuter) {
-              stageOuter.classList.remove('active');
-              stageOuter.classList.add('grayed');
-            }
-            if (stageInner) {
-              stageInner.classList.remove('active');
-              stageInner.classList.add('grayed');
-            }
-            if (stageText) {
-              stageText.classList.remove('active');
-              stageText.classList.add('grayed');
+            if (stageGroup) {
+              stageGroup.classList.remove('active');
+              stageGroup.classList.add('grayed');
             }
           }
         }
@@ -258,14 +267,10 @@
       const allInfoCards = document.querySelectorAll('.stage-info');
       allInfoCards.forEach(card => card.style.display = 'none');
       
-      const stageOuter = document.querySelector(`[data-stage="${stage}"].stage-outer`);
-      const stageInner = document.querySelector(`[data-stage="${stage}"].stage-inner`);
-      const stageText = document.querySelector(`[data-stage="${stage}"].stage-text`);
+      const stageGroup = document.querySelector(`[data-stage="${stage}"].stage-group`);
       const stageInfo = document.querySelector(`[data-info="${stage}"]`);
       
-      if (stageOuter) stageOuter.classList.add('active');
-      if (stageInner) stageInner.classList.add('active');
-      if (stageText) stageText.classList.add('active');
+      if (stageGroup) stageGroup.classList.add('active');
       
       // Show corresponding info card with slight delay for better UX
       if (stageInfo) {
@@ -276,34 +281,20 @@
     }
 
     function grayOutStage(stage) {
-      const stageOuter = document.querySelector(`[data-stage="${stage}"].stage-outer`);
-      const stageInner = document.querySelector(`[data-stage="${stage}"].stage-inner`);
-      const stageText = document.querySelector(`[data-stage="${stage}"].stage-text`);
+      const stageGroup = document.querySelector(`[data-stage="${stage}"].stage-group`);
       
-      if (stageOuter) {
-        stageOuter.classList.remove('active');
-        stageOuter.classList.add('grayed');
-      }
-      if (stageInner) {
-        stageInner.classList.remove('active');
-        stageInner.classList.add('grayed');
-      }
-      if (stageText) {
-        stageText.classList.remove('active');
-        stageText.classList.add('grayed');
+      if (stageGroup) {
+        stageGroup.classList.remove('active');
+        stageGroup.classList.add('grayed');
       }
     }
 
     // Initialize all stages as grayed out
     document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < totalStages; i++) {
-        const stageOuter = document.querySelector(`[data-stage="${i}"].stage-outer`);
-        const stageInner = document.querySelector(`[data-stage="${i}"].stage-inner`);
-        const stageText = document.querySelector(`[data-stage="${i}"].stage-text`);
+        const stageGroup = document.querySelector(`[data-stage="${i}"].stage-group`);
         
-        if (stageOuter) stageOuter.classList.add('grayed');
-        if (stageInner) stageInner.classList.add('grayed');
-        if (stageText) stageText.classList.add('grayed');
+        if (stageGroup) stageGroup.classList.add('grayed');
       }
     });
   </script>

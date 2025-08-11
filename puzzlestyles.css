@@ -241,51 +241,52 @@ nav {
 }
 
 /* Stage states - Default grayed out */
-.stage-outer {
+.stage-group {
   transition: all 0.5s ease;
   transform-origin: center;
+}
+
+.stage-outer {
+  transition: all 0.5s ease;
 }
 
 .stage-inner {
   transition: all 0.5s ease;
-  transform-origin: center;
 }
 
 .stage-text {
   transition: all 0.5s ease;
-  transform-origin: center;
 }
 
 /* Grayed out state */
-.stage-outer.grayed {
+.stage-group.grayed .stage-outer {
   stroke-opacity: 0.3 !important;
 }
 
-.stage-inner.grayed {
+.stage-group.grayed .stage-inner {
   fill-opacity: 0.3 !important;
 }
 
-.stage-text.grayed {
+.stage-group.grayed .stage-text {
   fill-opacity: 0.4 !important;
 }
 
 /* Active state - full color and double size */
-.stage-outer.active {
+.stage-group.active {
+  transform: scale(2);
+  z-index: 10;
+}
+
+.stage-group.active .stage-outer {
   stroke-opacity: 1 !important;
-  transform: scale(2);
-  z-index: 10;
 }
 
-.stage-inner.active {
+.stage-group.active .stage-inner {
   fill-opacity: 1 !important;
-  transform: scale(2);
-  z-index: 10;
 }
 
-.stage-text.active {
+.stage-group.active .stage-text {
   fill-opacity: 1 !important;
-  transform: scale(2);
-  z-index: 10;
 }
 
 /* Hero Section */
