@@ -95,6 +95,34 @@
           <rect x="671" y="211" width="58" height="58" rx="8" fill="#f59e0b" class="stage-inner" data-stage="5" />
           <text x="700" y="245" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="5">EXIT/IPO</text>
         </svg>
+        
+        <!-- Stage Information Cards -->
+        <div class="stage-info-container">
+          <div class="stage-info" data-info="0" style="display: none;">
+            <h3>Formation Stage</h3>
+            <p>Puzzle helps you set up your accounting foundation from day one. Get your books ready for investors with automated setup and compliant financial structures.</p>
+          </div>
+          <div class="stage-info" data-info="1" style="display: none;">
+            <h3>Pre-Seed Funding</h3>
+            <p>Track your runway and burn rate with real-time dashboards. Puzzle's investor-ready reports help you secure your first funding round with confidence.</p>
+          </div>
+          <div class="stage-info" data-info="2" style="display: none;">
+            <h3>Seed Round</h3>
+            <p>Scale your financial operations as you grow. Automated categorization and reconciliation save hours while maintaining 95% accuracy for growing teams.</p>
+          </div>
+          <div class="stage-info" data-info="3" style="display: none;">
+            <h3>Series A</h3>
+            <p>Advanced metrics and variance analysis help you optimize operations. Real-time financial insights support strategic decisions as you scale rapidly.</p>
+          </div>
+          <div class="stage-info" data-info="4" style="display: none;">
+            <h3>Series B/C Growth</h3>
+            <p>Enterprise-grade financial infrastructure grows with you. Multi-entity support and advanced reporting keep pace with your expansion.</p>
+          </div>
+          <div class="stage-info" data-info="5" style="display: none;">
+            <h3>Exit/IPO Ready</h3>
+            <p>Auditor-friendly books and comprehensive financial statements make your exit seamless. Puzzle ensures your financials meet the highest standards.</p>
+          </div>
+        </div>
       </div>
     </section>
     
@@ -149,23 +177,65 @@
         if (currentStage < totalStages) {
           // Activate current stage
           activateStage(currentStage);
-          button.textContent = 'Spin';
+          
+          // Check if we're at the last stage (EXIT/IPO)
+          if (currentStage === totalStages - 1) {
+            button.textContent = 'Restart';
+          } else {
+            button.textContent = 'Spin';
+          }
         } else {
-          // All stages completed, change button to restart
-          button.textContent = 'Restart';
-          currentStage = -1; // Reset for next restart
+          // Reset everything for restart
+          button.textContent = 'Spin';
+          currentStage = -1;
+          
+          // Hide all info cards
+          const allInfoCards = document.querySelectorAll('.stage-info');
+          allInfoCards.forEach(card => card.style.display = 'none');
+          
+          // Gray out all stages again
+          for (let i = 0; i < totalStages; i++) {
+            const stageOuter = document.querySelector(`[data-stage="${i}"].stage-outer`);
+            const stageInner = document.querySelector(`[data-stage="${i}"].stage-inner`);
+            const stageText = document.querySelector(`[data-stage="${i}"].stage-text`);
+            
+            if (stageOuter) {
+              stageOuter.classList.remove('active');
+              stageOuter.classList.add('grayed');
+            }
+            if (stageInner) {
+              stageInner.classList.remove('active');
+              stageInner.classList.add('grayed');
+            }
+            if (stageText) {
+              stageText.classList.remove('active');
+              stageText.classList.add('grayed');
+            }
+          }
         }
       }, 3000);
     }
 
     function activateStage(stage) {
+      // Hide all stage info cards first
+      const allInfoCards = document.querySelectorAll('.stage-info');
+      allInfoCards.forEach(card => card.style.display = 'none');
+      
       const stageOuter = document.querySelector(`[data-stage="${stage}"].stage-outer`);
       const stageInner = document.querySelector(`[data-stage="${stage}"].stage-inner`);
       const stageText = document.querySelector(`[data-stage="${stage}"].stage-text`);
+      const stageInfo = document.querySelector(`[data-info="${stage}"]`);
       
       if (stageOuter) stageOuter.classList.add('active');
       if (stageInner) stageInner.classList.add('active');
       if (stageText) stageText.classList.add('active');
+      
+      // Show corresponding info card with slight delay for better UX
+      if (stageInfo) {
+        setTimeout(() => {
+          stageInfo.style.display = 'block';
+        }, 300);
+      }
     }
 
     function grayOutStage(stage) {

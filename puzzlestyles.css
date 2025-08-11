@@ -173,6 +173,51 @@ nav {
   height: auto;
   max-height: 500px;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+  overflow: visible;
+}
+
+/* Stage Information Cards */
+.stage-info-container {
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stage-info {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.stage-info h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--puzzle-white);
+  margin-bottom: 16px;
+}
+
+.stage-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Stage hover effects */
@@ -198,14 +243,17 @@ nav {
 /* Stage states - Default grayed out */
 .stage-outer {
   transition: all 0.5s ease;
+  transform-origin: center;
 }
 
 .stage-inner {
   transition: all 0.5s ease;
+  transform-origin: center;
 }
 
 .stage-text {
   transition: all 0.5s ease;
+  transform-origin: center;
 }
 
 /* Grayed out state */
@@ -221,17 +269,23 @@ nav {
   fill-opacity: 0.4 !important;
 }
 
-/* Active state - full color */
+/* Active state - full color and double size */
 .stage-outer.active {
   stroke-opacity: 1 !important;
+  transform: scale(2);
+  z-index: 10;
 }
 
 .stage-inner.active {
   fill-opacity: 1 !important;
+  transform: scale(2);
+  z-index: 10;
 }
 
 .stage-text.active {
   fill-opacity: 1 !important;
+  transform: scale(2);
+  z-index: 10;
 }
 
 /* Hero Section */
