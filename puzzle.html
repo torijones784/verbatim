@@ -39,7 +39,7 @@
             <h1 class="hero-title">The Startup Accounting Game of <span class="life-text"><span class="life-l">L</span><span class="life-i">I</span><span class="life-f">F</span><span class="life-e">E</span></span></h1>
             <p class="hero-subtitle">You found your great idea. Now see how Puzzle can support you at every stage—from formation to exit—with real-time financial insights, automated bookkeeping, and the tools ambitious founders need to build lasting companies.</p>
             <div class="hero-buttons">
-                <a href="#" class="primary-btn" onclick="this.classList.add('spinning'); return false;">Get Started</a>
+                <a href="#" class="primary-btn" onclick="spinButton(this); return false;">Spin</a>
             </div>
         </div>
     </section>
@@ -126,4 +126,16 @@
         </div>
     </section>
   </body>
+  
+  <script>
+    function spinButton(button) {
+      button.classList.add('spinning');
+      
+      // After 3 seconds (when animation ends), change text to "Spin"
+      setTimeout(() => {
+        button.textContent = 'Spin';
+        button.classList.remove('spinning');
+      }, 3000);
+    }
+  </script>
 </html>
