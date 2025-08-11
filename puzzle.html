@@ -47,9 +47,9 @@
     <!-- Game Path Section -->
     <section class="game-section">
       <div class="game-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" class="game-svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" class="game-svg">
           <!-- Background -->
-          <rect width="800" height="600" fill="transparent" rx="8" />
+          <rect width="1000" height="600" fill="transparent" rx="8" />
         
           <!-- Game path with gradient -->
           <defs>
@@ -58,6 +58,43 @@
               <stop offset="50%" stop-color="#4f46e5" />
               <stop offset="100%" stop-color="#7c3aed" />
             </linearGradient>
+          </defs>
+          
+          <!-- Game path background -->
+          <path d="M100,300 C100,300 180,300 250,300 C320,300 380,300 450,300 C520,300 580,300 650,300 C720,300 800,300 900,300" 
+                stroke="url(#pathGradient)" stroke-width="12" fill="none" stroke-linecap="round" />
+          
+          <!-- Stage circles with modern style -->
+          <!-- Formation -->
+          <rect x="65" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#50fba9" stroke-width="3" class="stage-outer" data-stage="0" />
+          <rect x="71" y="271" width="58" height="58" rx="8" fill="#50fba9" class="stage-inner" data-stage="0" />
+          <text x="100" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="0">START</text>
+          
+          <!-- Pre-seed -->
+          <rect x="215" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="3" class="stage-outer" data-stage="1" />
+          <rect x="221" y="271" width="58" height="58" rx="8" fill="#4f46e5" class="stage-inner" data-stage="1" />
+          <text x="250" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="1">PRE-SEED</text>
+          
+          <!-- Seed -->
+          <rect x="415" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="3" class="stage-outer" data-stage="2" />
+          <rect x="421" y="271" width="58" height="58" rx="8" fill="#10b981" class="stage-inner" data-stage="2" />
+          <text x="450" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="2">SEED</text>
+          
+          <!-- Series A -->
+          <rect x="615" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="3" class="stage-outer" data-stage="3" />
+          <rect x="621" y="271" width="58" height="58" rx="8" fill="#3b82f6" class="stage-inner" data-stage="3" />
+          <text x="650" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="3">SERIES A</text>
+          
+          <!-- Series B/C -->
+          <rect x="765" y="265" width="80" height="70" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="3" class="stage-outer" data-stage="4" />
+          <rect x="771" y="271" width="68" height="58" rx="8" fill="#7c3aed" class="stage-inner" data-stage="4" />
+          <text x="805" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="4">SERIES B/C</text>
+          
+          <!-- Exit/IPO -->
+          <rect x="865" y="265" width="70" height="70" rx="12" fill="#ffffff" stroke="#f59e0b" stroke-width="3" class="stage-outer" data-stage="5" />
+          <rect x="871" y="271" width="58" height="58" rx="8" fill="#f59e0b" class="stage-inner" data-stage="5" />
+          <text x="900" y="305" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text" data-stage="5">EXIT/IPO</text>
+        </svg>
           </defs>
           
           <!-- Game path background -->
