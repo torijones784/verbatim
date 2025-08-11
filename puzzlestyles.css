@@ -196,34 +196,43 @@ nav {
 }
 
 /* Stage states */
-.stage-outer.grayed {
-  stroke: #6b7280 !important;
-  opacity: 0.4;
+.stage-outer {
+  stroke-opacity: 0.3;
+  transition: all 0.5s ease;
 }
 
-.stage-inner.grayed {
-  fill: #6b7280 !important;
-  opacity: 0.4;
+.stage-inner {
+  fill-opacity: 0.3;
+  transition: all 0.5s ease;
 }
 
-.stage-text.grayed {
-  fill: #9ca3af !important;
-  opacity: 0.6;
+.stage-text {
+  fill-opacity: 0.4;
+  transition: all 0.5s ease;
 }
 
 .stage-outer.active {
-  opacity: 1;
-  stroke-opacity: 1;
+  stroke-opacity: 1 !important;
 }
 
 .stage-inner.active {
-  opacity: 1;
-  fill-opacity: 1;
+  fill-opacity: 1 !important;
 }
 
 .stage-text.active {
-  opacity: 1;
-  fill-opacity: 1;
+  fill-opacity: 1 !important;
+}
+
+.stage-outer.grayed {
+  stroke-opacity: 0.3 !important;
+}
+
+.stage-inner.grayed {
+  fill-opacity: 0.3 !important;
+}
+
+.stage-text.grayed {
+  fill-opacity: 0.4 !important;
 }
 
 /* Hero Section */
