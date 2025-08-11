@@ -177,7 +177,7 @@ nav {
 
 /* Stage hover effects */
 .game-svg rect {
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   cursor: pointer;
 }
 
@@ -187,12 +187,43 @@ nav {
 }
 
 .game-svg text {
-  transition: transform 0.3s ease;
+  transition: all 0.5s ease;
   pointer-events: none;
 }
 
 .game-svg rect:hover + text {
   transform: translateY(-2px);
+}
+
+/* Stage states */
+.stage-outer.grayed {
+  stroke: #6b7280 !important;
+  opacity: 0.4;
+}
+
+.stage-inner.grayed {
+  fill: #6b7280 !important;
+  opacity: 0.4;
+}
+
+.stage-text.grayed {
+  fill: #9ca3af !important;
+  opacity: 0.6;
+}
+
+.stage-outer.active {
+  opacity: 1;
+  stroke-opacity: 1;
+}
+
+.stage-inner.active {
+  opacity: 1;
+  fill-opacity: 1;
+}
+
+.stage-text.active {
+  opacity: 1;
+  fill-opacity: 1;
 }
 
 /* Hero Section */
@@ -327,6 +358,8 @@ nav {
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.06);
   position: relative;
   overflow: hidden;
+  min-width: 160px;
+  text-align: center;
 }
 
 .primary-btn:hover {
