@@ -163,9 +163,9 @@
       const stageInner = document.querySelector(`[data-stage="${stage}"].stage-inner`);
       const stageText = document.querySelector(`[data-stage="${stage}"].stage-text`);
       
-      stageOuter.classList.add('active');
-      stageInner.classList.add('active');
-      stageText.classList.add('active');
+      if (stageOuter) stageOuter.classList.add('active');
+      if (stageInner) stageInner.classList.add('active');
+      if (stageText) stageText.classList.add('active');
     }
 
     function grayOutStage(stage) {
@@ -173,19 +173,30 @@
       const stageInner = document.querySelector(`[data-stage="${stage}"].stage-inner`);
       const stageText = document.querySelector(`[data-stage="${stage}"].stage-text`);
       
-      stageOuter.classList.remove('active');
-      stageInner.classList.remove('active');
-      stageText.classList.remove('active');
-      
-      stageOuter.classList.add('grayed');
-      stageInner.classList.add('grayed');
-      stageText.classList.add('grayed');
+      if (stageOuter) {
+        stageOuter.classList.remove('active');
+        stageOuter.classList.add('grayed');
+      }
+      if (stageInner) {
+        stageInner.classList.remove('active');
+        stageInner.classList.add('grayed');
+      }
+      if (stageText) {
+        stageText.classList.remove('active');
+        stageText.classList.add('grayed');
+      }
     }
 
     // Initialize all stages as grayed out
     document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < totalStages; i++) {
-        grayOutStage(i);
+        const stageOuter = document.querySelector(`[data-stage="${i}"].stage-outer`);
+        const stageInner = document.querySelector(`[data-stage="${i}"].stage-inner`);
+        const stageText = document.querySelector(`[data-stage="${i}"].stage-text`);
+        
+        if (stageOuter) stageOuter.classList.add('grayed');
+        if (stageInner) stageInner.classList.add('grayed');
+        if (stageText) stageText.classList.add('grayed');
       }
     });
   </script>

@@ -195,34 +195,20 @@ nav {
   transform: translateY(-2px);
 }
 
-/* Stage states */
+/* Stage states - Default grayed out */
 .stage-outer {
-  stroke-opacity: 0.3;
   transition: all 0.5s ease;
 }
 
 .stage-inner {
-  fill-opacity: 0.3;
   transition: all 0.5s ease;
 }
 
 .stage-text {
-  fill-opacity: 0.4;
   transition: all 0.5s ease;
 }
 
-.stage-outer.active {
-  stroke-opacity: 1 !important;
-}
-
-.stage-inner.active {
-  fill-opacity: 1 !important;
-}
-
-.stage-text.active {
-  fill-opacity: 1 !important;
-}
-
+/* Grayed out state */
 .stage-outer.grayed {
   stroke-opacity: 0.3 !important;
 }
@@ -233,6 +219,19 @@ nav {
 
 .stage-text.grayed {
   fill-opacity: 0.4 !important;
+}
+
+/* Active state - full color */
+.stage-outer.active {
+  stroke-opacity: 1 !important;
+}
+
+.stage-inner.active {
+  fill-opacity: 1 !important;
+}
+
+.stage-text.active {
+  fill-opacity: 1 !important;
 }
 
 /* Hero Section */
