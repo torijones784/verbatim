@@ -39,7 +39,7 @@
         <div class="hero-container">
             <div class="stage-label">by Tori Jones</div>
             <h1 class="hero-title">The Startup Accounting Game of <span class="life-text"><span class="life-l">L</span><span class="life-i">I</span><span class="life-f">F</span><span class="life-e">E</span></span></h1>
-            <p class="hero-subtitle">You found your great idea. Now see how Puzzle can support you at every stage—from formation to exit—with real-time financial insights, automated bookkeeping, and the tools ambitious founders need to build lasting companies.</p>
+            <p class="hero-subtitle">You found your great idea. Now see how Puzzle can support you at every stage with the tools ambitious founders need to build lasting companies.</p>
             <div class="hero-buttons">
                 <a href="#" class="primary-btn" onclick="spinButton(this); return false;">Spin</a>
             </div>
@@ -197,12 +197,6 @@
     function spinButton(button) {
       button.classList.add('spinning');
       
-      // Smooth scroll to bottom of page
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth'
-      });
-      
       // After 3 seconds (when animation ends)
       setTimeout(() => {
         button.classList.remove('spinning');
@@ -261,6 +255,14 @@
       if (stageInfo) {
         setTimeout(() => {
           stageInfo.style.display = 'flex';
+          
+          // Smooth scroll to bottom after cards appear
+          setTimeout(() => {
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: 'smooth'
+            });
+          }, 100);
         }, 300);
       }
     }
