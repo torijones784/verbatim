@@ -161,124 +161,14 @@ nav {
 .game-section {
   padding: 40px 20px 60px;
   background: transparent;
-}
-
-.game-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.game-svg {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
-  overflow: visible;
-}
-
-/* Stage hover effects */
-.game-svg rect {
-  transition: all 0.5s ease;
-  cursor: pointer;
-}
-
-.game-svg rect:hover {
-  filter: brightness(1.1);
-  transform: translateY(-2px);
-}
-
-.game-svg text {
-  transition: all 0.5s ease;
-  pointer-events: none;
-}
-
-.game-svg rect:hover + text {
-  transform: translateY(-2px);
-}
-
-/* Stage states - Default grayed out */
-.stage-group {
-  transition: all 0.5s ease;
-}
-
-.stage-group[data-stage="0"] {
-  transform-origin: 100px 150px; /* START tile center */
-}
-
-.stage-group[data-stage="1"] {
-  transform-origin: 250px 150px; /* PRE-SEED tile center */
-}
-
-.stage-group[data-stage="2"] {
-  transform-origin: 400px 150px; /* SEED tile center */
-}
-
-.stage-group[data-stage="3"] {
-  transform-origin: 550px 150px; /* SERIES A tile center */
-}
-
-.stage-group[data-stage="4"] {
-  transform-origin: 700px 150px; /* SERIES B/C tile center */
-}
-
-.stage-group[data-stage="5"] {
-  transform-origin: 850px 150px; /* EXIT/IPO tile center */
-}
-
-.stage-outer {
-  transition: all 0.5s ease;
-}
-
-.stage-inner {
-  transition: all 0.5s ease;
-}
-
-.stage-text {
-  transition: all 0.5s ease;
-}
-
-/* Grayed out state */
-.stage-group.grayed .stage-outer {
-  stroke-opacity: 0.3 !important;
-}
-
-.stage-group.grayed .stage-inner {
-  fill-opacity: 0.3 !important;
-}
-
-.stage-group.grayed .stage-text {
-  fill-opacity: 0.4 !important;
-}
-
-/* Active state - full color and double size */
-.stage-group.active {
-  transform: scale(2);
-  z-index: 10;
-}
-
-.stage-group.active .stage-outer {
-  stroke-opacity: 1 !important;
-}
-
-.stage-group.active .stage-inner {
-  fill-opacity: 1 !important;
-}
-
-.stage-group.active .stage-text {
-  fill-opacity: 1 !important;
-}
-
-/* Hero Section */
-.hero {
-  padding: 60px 20px 40px;
-  background: transparent;
+  text-align: center;
   position: relative;
   overflow: hidden;
-  margin-top: -80px;
-  padding-top: 140px;
+  margin-top: -40px;
+  padding-top: 80px;
 }
 
-.hero::before {
+.game-section::before {
   content: '';
   position: absolute;
   top: -100px;
@@ -294,9 +184,16 @@ nav {
   z-index: 0;
 }
 
-.hero-container {
+.game-container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto 60px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -386,6 +283,7 @@ nav {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 60px;
 }
 
 .primary-btn {
@@ -418,173 +316,164 @@ nav {
 @keyframes spinColorChange {
   0% {
     transform: rotate(0deg);
-    background: linear-gradient(145deg, #e91e63, #c2185b); /* Pink like L */
+    background: linear-gradient(145deg, #e91e63, #c2185b);
   }
   12.5% {
     transform: rotate(180deg);
-    background: linear-gradient(145deg, #2196f3, #1976d2); /* Blue like I */
+    background: linear-gradient(145deg, #2196f3, #1976d2);
   }
   25% {
     transform: rotate(360deg);
-    background: linear-gradient(145deg, #4caf50, #388e3c); /* Green like F */
+    background: linear-gradient(145deg, #4caf50, #388e3c);
   }
   37.5% {
     transform: rotate(540deg);
-    background: linear-gradient(145deg, #ffeb3b, #fbc02d); /* Yellow like E */
+    background: linear-gradient(145deg, #ffeb3b, #fbc02d);
   }
   50% {
     transform: rotate(720deg);
-    background: linear-gradient(145deg, #e91e63, #c2185b); /* Pink like L */
+    background: linear-gradient(145deg, #e91e63, #c2185b);
   }
   62.5% {
     transform: rotate(900deg);
-    background: linear-gradient(145deg, #2196f3, #1976d2); /* Blue like I */
+    background: linear-gradient(145deg, #2196f3, #1976d2);
   }
   75% {
     transform: rotate(1080deg);
-    background: linear-gradient(145deg, #4caf50, #388e3c); /* Green like F */
+    background: linear-gradient(145deg, #4caf50, #388e3c);
   }
   87.5% {
     transform: rotate(1260deg);
-    background: linear-gradient(145deg, #ffeb3b, #fbc02d); /* Yellow like E */
+    background: linear-gradient(145deg, #ffeb3b, #fbc02d);
   }
   100% {
     transform: rotate(1440deg);
-    background-color: var(--puzzle-green); /* Back to original */
+    background-color: var(--puzzle-green);
   }
 }
 
-.secondary-btn {
-  background-color: transparent;
-  color: var(--puzzle-gray-700);
-  padding: 14px 28px;
-  border: 2px solid var(--puzzle-gray-200);
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 16px;
-  text-decoration: none;
-  transition: all 0.2s ease;
+.game-svg {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+  overflow: visible;
 }
 
-.secondary-btn:hover {
-  border-color: var(--puzzle-gray-300);
-  background-color: var(--puzzle-gray-50);
+/* Stage states */
+.stage-group {
+  transition: all 0.5s ease;
 }
 
-/* Solutions Section */
-.solutions {
-  padding: 80px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+.stage-group[data-stage="0"] {
+  transform-origin: 100px 150px;
 }
 
-.solutions-container {
-  max-width: 1200px;
-  margin: 0 auto;
+.stage-group[data-stage="1"] {
+  transform-origin: 250px 150px;
 }
 
-.solutions-title {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 700;
-  margin-bottom: 64px;
-  text-align: center;
-  color: var(--puzzle-white);
+.stage-group[data-stage="2"] {
+  transform-origin: 400px 150px;
 }
 
-.solution-cards {
-  display: grid;
-  gap: 32px;
-  grid-template-columns: 1fr;
-  max-width: 800px;
-  margin: 0 auto;
+.stage-group[data-stage="3"] {
+  transform-origin: 550px 150px;
 }
 
-.solution-card {
+.stage-group[data-stage="4"] {
+  transform-origin: 700px 150px;
+}
+
+.stage-group[data-stage="5"] {
+  transform-origin: 850px 150px;
+}
+
+.stage-outer {
+  transition: all 0.5s ease;
+}
+
+.stage-inner {
+  transition: all 0.5s ease;
+}
+
+.stage-text {
+  transition: all 0.5s ease;
+}
+
+/* Grayed out state */
+.stage-group.grayed .stage-outer {
+  stroke-opacity: 0.3 !important;
+}
+
+.stage-group.grayed .stage-inner {
+  fill-opacity: 0.3 !important;
+}
+
+.stage-group.grayed .stage-text {
+  fill-opacity: 0.4 !important;
+}
+
+/* Active state - full color and double size */
+.stage-group.active {
+  transform: scale(2);
+  z-index: 10;
+}
+
+.stage-group.active .stage-outer {
+  stroke-opacity: 1 !important;
+}
+
+.stage-group.active .stage-inner {
+  fill-opacity: 1 !important;
+}
+
+.stage-group.active .stage-text {
+  fill-opacity: 1 !important;
+}
+
+/* Stage Information Cards */
+.stage-info-container {
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stage-info {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  padding: 40px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 32px;
+  text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.6s ease-out;
 }
 
-.solution-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.solution-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 24px;
-}
-
-.solution-type {
-  font-size: 28px;
+.stage-info h3 {
+  font-size: 24px;
   font-weight: 700;
   color: var(--puzzle-white);
+  margin-bottom: 16px;
 }
 
-.solution-arrow {
-  width: 48px;
-  height: 48px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.7);
-  transition: all 0.2s ease;
-}
-
-.solution-card:hover .solution-arrow {
-  background-color: var(--puzzle-green);
-  color: var(--puzzle-gray-900);
-  transform: rotate(45deg);
-}
-
-.testimonial {
+.stage-info p {
   font-size: 18px;
-  margin-bottom: 32px;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.7;
-  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
 }
 
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.author-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.author-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.author-name {
-  font-weight: 600;
-  color: var(--puzzle-white);
-  font-size: 16px;
-}
-
-.author-title {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 400;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
@@ -607,38 +496,23 @@ nav {
     padding: 60px 20px 20px;
   }
   
-  .hero {
-    padding: 60px 20px 80px;
-  }
-  
   .hero-buttons {
     flex-direction: column;
     gap: 12px;
   }
   
-  .primary-btn,
-  .secondary-btn {
+  .primary-btn {
     width: 100%;
     max-width: 280px;
   }
   
-  .solutions {
-    padding: 80px 20px;
-  }
-  
-  .solution-card {
+  .stage-info {
     padding: 32px 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .solution-header {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-  }
-  
-  .solution-arrow {
-    align-self: flex-end;
+  .stage-info {
+    padding: 24px 16px;
   }
 }
