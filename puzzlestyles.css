@@ -642,14 +642,41 @@ nav {
   /* Bigger tile states - increased by 25% */
   .stage-group {
     transform: scale(1.5) !important;
+    z-index: 1 !important;
   }
   
   .stage-group.grayed {
     transform: scale(1.5) !important;
+    z-index: 1 !important;
   }
   
   .stage-group.active {
     transform: scale(3.125) !important;
+    z-index: 20 !important;
+  }
+  
+  /* Make stage info cards 25% smaller */
+  .stage-info-left,
+  .stage-info-right {
+    padding: 15px 12px !important;
+    transform: scale(0.75) !important;
+    transform-origin: top left !important;
+  }
+  
+  .stage-info-left h3 {
+    font-size: 18px !important;
+  }
+  
+  .stage-info-right h3 {
+    font-size: 15px !important;
+  }
+  
+  .stage-info-left p {
+    font-size: 13.5px !important;
+  }
+  
+  .stage-info-right p {
+    font-size: 12px !important;
   }
   
   .stage-info-left,
