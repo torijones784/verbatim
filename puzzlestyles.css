@@ -535,9 +535,9 @@ nav {
 /* Responsive Design */
 @media (max-width: 768px) {
   nav {
-    padding: 16px 20px;
+    padding: 12px 20px;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
   }
   
   .nav-links {
@@ -545,38 +545,201 @@ nav {
   }
   
   .auth-buttons {
-    gap: 12px;
+    gap: 8px;
+  }
+  
+  .auth-buttons a {
+    font-size: 14px;
+    padding: 8px 12px;
   }
   
   .game-section {
-    padding: 60px 20px 20px;
+    padding: 40px 15px 40px;
+    margin-top: -20px;
+    padding-top: 60px;
+  }
+  
+  .hero-container {
+    margin-bottom: 0px;
+  }
+  
+  .stage-label {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .hero-title {
+    font-size: clamp(24px, 8vw, 36px);
+    margin-bottom: 16px;
+  }
+  
+  .life-l, .life-i, .life-f, .life-e {
+    padding: 6px 8px;
+    margin: 0 1px;
+    font-size: 14px;
+  }
+  
+  .hero-subtitle {
+    font-size: 16px;
+    margin-bottom: 24px;
+    padding: 0 10px;
   }
   
   .hero-buttons {
-    flex-direction: column;
-    gap: 12px;
+    margin-bottom: 0;
   }
   
   .primary-btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 200px;
+    padding: 12px 20px;
+    font-size: 14px;
+    min-width: 120px;
+  }
+  
+  .game-svg {
+    margin-top: -20px;
+    max-height: 300px;
+  }
+  
+  .stage-info-container {
+    margin-top: -80px;
+    padding: 0 10px;
   }
   
   .stage-info-wrapper {
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
   }
   
   .stage-info-left,
   .stage-info-right {
     flex: 1;
-    padding: 24px;
+    padding: 20px 16px;
+  }
+  
+  .stage-info-left h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  
+  .stage-info-right h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .stage-info-left p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .stage-info-right p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  /* Mobile-specific overrides for 10px text stages */
+  .stage-info-wrapper[data-info="1"] .stage-info-left h3,
+  .stage-info-wrapper[data-info="4"] .stage-info-left h3,
+  .stage-info-wrapper[data-info="1"] .stage-info-right h3,
+  .stage-info-wrapper[data-info="4"] .stage-info-right h3 {
+    font-size: 12px !important;
+  }
+  
+  .stage-info-wrapper[data-info="1"] .stage-info-left p,
+  .stage-info-wrapper[data-info="4"] .stage-info-left p,
+  .stage-info-wrapper[data-info="1"] .stage-info-right p,
+  .stage-info-wrapper[data-info="4"] .stage-info-right p {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
   }
 }
 
 @media (max-width: 480px) {
+  .top-banner {
+    font-size: 13px;
+    padding: 8px 15px;
+  }
+  
+  nav {
+    padding: 10px 15px;
+  }
+  
+  .logo-text {
+    font-size: 20px;
+  }
+  
+  .game-section {
+    padding: 30px 10px 30px;
+    padding-top: 50px;
+  }
+  
+  .hero-title {
+    font-size: clamp(20px, 9vw, 28px);
+  }
+  
+  .life-l, .life-i, .life-f, .life-e {
+    padding: 4px 6px;
+    margin: 0 1px;
+    font-size: 12px;
+  }
+  
+  .hero-subtitle {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+  
+  .primary-btn {
+    max-width: 160px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  .game-svg {
+    margin-top: -15px;
+    max-height: 250px;
+  }
+  
+  .stage-info-container {
+    margin-top: -60px;
+    padding: 0 5px;
+  }
+  
   .stage-info-left,
   .stage-info-right {
-    padding: 20px 16px;
+    padding: 16px 12px;
+  }
+  
+  .stage-info-left h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .stage-info-right h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .stage-info-left p {
+    font-size: 13px;
+  }
+  
+  .stage-info-right p {
+    font-size: 12px;
+  }
+  
+  /* Extra small mobile overrides for 10px text stages */
+  .stage-info-wrapper[data-info="1"] .stage-info-left h3,
+  .stage-info-wrapper[data-info="4"] .stage-info-left h3,
+  .stage-info-wrapper[data-info="1"] .stage-info-right h3,
+  .stage-info-wrapper[data-info="4"] .stage-info-right h3 {
+    font-size: 11px !important;
+  }
+  
+  .stage-info-wrapper[data-info="1"] .stage-info-left p,
+  .stage-info-wrapper[data-info="4"] .stage-info-left p,
+  .stage-info-wrapper[data-info="1"] .stage-info-right p,
+  .stage-info-wrapper[data-info="4"] .stage-info-right p {
+    font-size: 10px !important;
   }
 }

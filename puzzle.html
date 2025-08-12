@@ -197,6 +197,12 @@
     function spinButton(button) {
       button.classList.add('spinning');
       
+      // Smooth scroll to bottom of page
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+      
       // After 3 seconds (when animation ends)
       setTimeout(() => {
         button.classList.remove('spinning');
