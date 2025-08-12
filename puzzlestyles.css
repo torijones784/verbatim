@@ -532,7 +532,7 @@ nav {
   }
 }
 
-/* Responsive Design */
+/* Tablet Responsive Design */
 @media (max-width: 768px) {
   nav {
     padding: 12px 20px;
@@ -655,91 +655,102 @@ nav {
   }
 }
 
+/* Phone Responsive Design - BIGGER TEXT */
 @media (max-width: 480px) {
   .top-banner {
-    font-size: 13px;
-    padding: 8px 15px;
+    font-size: 18px !important;
+    padding: 12px 15px !important;
   }
   
   nav {
-    padding: 10px 15px;
+    padding: 12px 15px !important;
   }
   
   .logo-text {
-    font-size: 20px;
+    font-size: 28px !important;
   }
   
   .game-section {
-    padding: 30px 10px 30px;
-    padding-top: 50px;
+    padding: 30px 10px 30px !important;
+    padding-top: 50px !important;
+  }
+  
+  .stage-label {
+    font-size: 16px !important;
+    margin-bottom: 16px !important;
   }
   
   .hero-title {
-    font-size: clamp(20px, 9vw, 28px);
+    font-size: clamp(36px, 12vw, 52px) !important;
+    margin-bottom: 16px !important;
   }
   
   .life-l, .life-i, .life-f, .life-e {
-    padding: 4px 6px;
-    margin: 0 1px;
-    font-size: 12px;
+    padding: 8px 10px !important;
+    margin: 0 2px !important;
+    font-size: 24px !important;
   }
   
   .hero-subtitle {
-    font-size: 14px;
-    padding: 0 5px;
+    font-size: 18px !important;
+    padding: 0 10px !important;
+    margin-bottom: 24px !important;
   }
   
   .primary-btn {
-    max-width: 160px;
-    padding: 10px 16px;
-    font-size: 13px;
+    max-width: 160px !important;
+    padding: 14px 20px !important;
+    font-size: 18px !important;
   }
   
   .game-svg {
-    margin-top: -15px;
-    max-height: 250px;
+    margin-top: -10px !important;
+    max-height: 250px !important;
   }
   
   .stage-info-container {
-    margin-top: -60px;
-    padding: 0 5px;
+    margin-top: 0px !important;
+    padding: 0 10px !important;
   }
   
   .stage-info-left,
   .stage-info-right {
-    padding: 16px 12px;
+    padding: 24px 18px !important;
   }
   
   .stage-info-left h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 22px !important;
+    margin-bottom: 12px !important;
   }
   
   .stage-info-right h3 {
-    font-size: 14px;
-    margin-bottom: 8px;
+    font-size: 20px !important;
+    margin-bottom: 10px !important;
   }
   
   .stage-info-left p {
-    font-size: 13px;
+    font-size: 18px !important;
+    line-height: 1.5 !important;
   }
   
   .stage-info-right p {
-    font-size: 12px;
+    font-size: 17px !important;
+    line-height: 1.4 !important;
   }
   
-  /* Extra small mobile overrides for 10px text stages */
+  /* Phone overrides for pre-seed and series B/C - bigger on mobile */
   .stage-info-wrapper[data-info="1"] .stage-info-left h3,
   .stage-info-wrapper[data-info="4"] .stage-info-left h3,
   .stage-info-wrapper[data-info="1"] .stage-info-right h3,
   .stage-info-wrapper[data-info="4"] .stage-info-right h3 {
-    font-size: 11px !important;
+    font-size: 18px !important;
   }
   
   .stage-info-wrapper[data-info="1"] .stage-info-left p,
   .stage-info-wrapper[data-info="4"] .stage-info-left p,
   .stage-info-wrapper[data-info="1"] .stage-info-right p,
   .stage-info-wrapper[data-info="4"] .stage-info-right p {
-    font-size: 10px !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
   }
 }
