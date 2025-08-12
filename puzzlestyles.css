@@ -193,7 +193,7 @@ nav {
 
 .hero-container {
   max-width: 1200px;
-  margin: 0 auto 40px;
+  margin: 0 auto 10px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -283,7 +283,7 @@ nav {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .primary-btn {
@@ -490,25 +490,32 @@ nav {
   margin: 0;
 }
 
+.stage-info-right p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
 /* Specific font sizes for pre-seed and series B/C cards */
 .stage-info-wrapper[data-info="1"] .stage-info-left h3,
 .stage-info-wrapper[data-info="4"] .stage-info-left h3 {
-  font-size: 10px;
+  font-size: 10px !important;
 }
 
 .stage-info-wrapper[data-info="1"] .stage-info-left p,
 .stage-info-wrapper[data-info="4"] .stage-info-left p {
-  font-size: 10px;
+  font-size: 10px !important;
 }
 
 .stage-info-wrapper[data-info="1"] .stage-info-right h3,
 .stage-info-wrapper[data-info="4"] .stage-info-right h3 {
-  font-size: 10px;
+  font-size: 10px !important;
 }
 
 .stage-info-wrapper[data-info="1"] .stage-info-right p,
 .stage-info-wrapper[data-info="4"] .stage-info-right p {
-  font-size: 10px;
+  font-size: 10px !important;
 }
 
 @keyframes fadeInUp {
