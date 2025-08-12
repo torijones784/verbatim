@@ -498,7 +498,7 @@ nav {
   margin: 0;
 }
 
-/* Specific font sizes for pre-seed and series B/C cards */
+/* Specific font sizes for pre-seed and series B/C cards - DESKTOP ONLY */
 .stage-info-wrapper[data-info="1"] .stage-info-left h3,
 .stage-info-wrapper[data-info="4"] .stage-info-left h3 {
   font-size: 10px !important;
@@ -532,12 +532,12 @@ nav {
   }
 }
 
-/* Tablet Responsive Design */
+/* Tablet Responsive Design - NO CHANGES FROM ORIGINAL */
 @media (max-width: 768px) {
   nav {
-    padding: 12px 20px;
+    padding: 16px 20px;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
   }
   
   .nav-links {
@@ -545,123 +545,38 @@ nav {
   }
   
   .auth-buttons {
-    gap: 8px;
-  }
-  
-  .auth-buttons a {
-    font-size: 14px;
-    padding: 8px 12px;
+    gap: 12px;
   }
   
   .game-section {
-    padding: 40px 15px 40px;
-    margin-top: -20px;
-    padding-top: 60px;
-  }
-  
-  .hero-container {
-    margin-bottom: 0px;
-  }
-  
-  .stage-label {
-    font-size: 12px;
-    margin-bottom: 16px;
-  }
-  
-  .hero-title {
-    font-size: clamp(24px, 8vw, 36px);
-    margin-bottom: 16px;
-  }
-  
-  .life-l, .life-i, .life-f, .life-e {
-    padding: 6px 8px;
-    margin: 0 1px;
-    font-size: 14px;
-  }
-  
-  .hero-subtitle {
-    font-size: 16px;
-    margin-bottom: 24px;
-    padding: 0 10px;
+    padding: 60px 20px 20px;
   }
   
   .hero-buttons {
-    margin-bottom: 0;
+    flex-direction: column;
+    gap: 12px;
   }
   
   .primary-btn {
     width: 100%;
-    max-width: 200px;
-    padding: 12px 20px;
-    font-size: 14px;
-    min-width: 120px;
-  }
-  
-  .game-svg {
-    margin-top: -20px;
-    max-height: 300px;
-  }
-  
-  .stage-info-container {
-    margin-top: -80px;
-    padding: 0 10px;
+    max-width: 280px;
   }
   
   .stage-info-wrapper {
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
   }
   
   .stage-info-left,
   .stage-info-right {
     flex: 1;
-    padding: 20px 16px;
-  }
-  
-  .stage-info-left h3 {
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
-  
-  .stage-info-right h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .stage-info-left p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  .stage-info-right p {
-    font-size: 13px;
-    line-height: 1.4;
-  }
-  
-  /* Mobile-specific overrides for 10px text stages */
-  .stage-info-wrapper[data-info="1"] .stage-info-left h3,
-  .stage-info-wrapper[data-info="4"] .stage-info-left h3,
-  .stage-info-wrapper[data-info="1"] .stage-info-right h3,
-  .stage-info-wrapper[data-info="4"] .stage-info-right h3 {
-    font-size: 12px !important;
-  }
-  
-  .stage-info-wrapper[data-info="1"] .stage-info-left p,
-  .stage-info-wrapper[data-info="4"] .stage-info-left p,
-  .stage-info-wrapper[data-info="1"] .stage-info-right p,
-  .stage-info-wrapper[data-info="4"] .stage-info-right p {
-    font-size: 11px !important;
-    line-height: 1.4 !important;
+    padding: 24px;
   }
 }
 
-/* Phone Responsive Design - BIGGER TEXT */
+/* Phone Responsive Design - ONLY PHONE CHANGES */
 @media (max-width: 480px) {
-  .top-banner {
-    font-size: 18px !important;
-    padding: 12px 15px !important;
-  }
-  
+  /* Nav stays on one line */
   nav {
     padding: 12px 15px !important;
     flex-wrap: nowrap !important;
@@ -679,104 +594,36 @@ nav {
     font-size: 12px !important;
     padding: 6px 8px !important;
   }
-  }
   
-  .game-section {
-    padding: 30px 10px 30px !important;
-    padding-top: 50px !important;
-  }
-  
-  .stage-label {
-    font-size: 16px !important;
-    margin-bottom: 16px !important;
-  }
-  
-  .hero-title {
-    font-size: clamp(36px, 12vw, 52px) !important;
-    margin-bottom: 16px !important;
-  }
-  
+  /* Make LIFE bigger */
   .life-l, .life-i, .life-f, .life-e {
     padding: 12px 16px !important;
     margin: 0 3px !important;
     font-size: 32px !important;
   }
   
-  .hero-subtitle {
-    font-size: 18px !important;
-    padding: 0 10px !important;
-    margin-bottom: 32px !important;
-  }
-  
-  .primary-btn {
-    max-width: 160px !important;
-    padding: 14px 20px !important;
-    font-size: 18px !important;
-  }
-  
+  /* Move gameboard down and make it smaller */
   .game-svg {
     margin-top: 20px !important;
     max-height: 200px !important;
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
   }
   
-  .stage-info-container {
-    margin-top: 40px !important;
-    padding: 0 10px !important;
+  /* Bigger tile states */
+  .stage-group {
+    transform: scale(1.2) !important;
   }
   
-  .stage-info-left,
-  .stage-info-right {
-    padding: 24px 18px !important;
+  .stage-group.grayed {
+    transform: scale(1.2) !important;
   }
   
-  .stage-info-left h3 {
-    font-size: 22px !important;
-    margin-bottom: 12px !important;
-  }
-  
-  .stage-info-right h3 {
-    font-size: 20px !important;
-    margin-bottom: 10px !important;
-  }
-  
-  .stage-info-left p {
-    font-size: 18px !important;
-    line-height: 1.5 !important;
-  }
-  
-  .stage-info-right p {
-    font-size: 17px !important;
-    line-height: 1.4 !important;
-  }
-  
-  /* Phone overrides for pre-seed and series B/C - bigger on mobile */
-  .stage-info-wrapper[data-info="1"] .stage-info-left h3,
-  .stage-info-wrapper[data-info="4"] .stage-info-left h3,
-  .stage-info-wrapper[data-info="1"] .stage-info-right h3,
-  .stage-info-wrapper[data-info="4"] .stage-info-right h3 {
-    font-size: 18px !important;
-  }
-  
-  .stage-info-wrapper[data-info="1"] .stage-info-left p,
-  .stage-info-wrapper[data-info="4"] .stage-info-left p,
-  .stage-info-wrapper[data-info="1"] .stage-info-right p,
-  .stage-info-wrapper[data-info="4"] .stage-info-right p {
-    font-size: 16px !important;
-    line-height: 1.4 !important;
-  }
-  
-  /* Bigger tile states for mobile */
   .stage-group.active {
     transform: scale(2.5) !important;
   }
   
-  /* Make inactive tiles bigger too */
-  .stage-group {
-    transform: scale(1.2);
-  }
-  
-  .stage-group.grayed {
-    transform: scale(1.2);
+  .stage-info-left,
+  .stage-info-right {
+    padding: 20px 16px !important;
   }
 }
