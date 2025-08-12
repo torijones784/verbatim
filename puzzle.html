@@ -114,29 +114,76 @@
         
         <!-- Stage Information Cards -->
         <div class="stage-info-container">
-          <div class="stage-info" data-info="0" style="display: none;">
-            <h3>Formation Stage</h3>
-            <p>Puzzle helps you set up your accounting foundation from day one. Get your books ready for investors with automated setup and compliant financial structures.</p>
+          <!-- Formation Stage -->
+          <div class="stage-info-wrapper" data-info="0" style="display: none;">
+            <div class="stage-info-left">
+              <h3>Formation Made Simple</h3>
+              <p>Get your accounting foundation right from day one. Puzzle automatically sets up compliant books, integrates with your bank and credit cards, and creates investor-ready financial statements so you can focus on building your product instead of spreadsheets.</p>
+            </div>
+            <div class="stage-info-right">
+              <h3>Oh no! 😰</h3>
+              <p>Your first investor meeting is tomorrow and you realize your "accounting system" is just a pile of receipts and a basic spreadsheet. You're about to lose a $50K check because you can't show proper financial records.</p>
+            </div>
           </div>
-          <div class="stage-info" data-info="1" style="display: none;">
-            <h3>Pre-Seed Funding</h3>
-            <p>Track your runway and burn rate with real-time dashboards. Puzzle's investor-ready reports help you secure your first funding round with confidence.</p>
+
+          <!-- Pre-Seed Stage -->
+          <div class="stage-info-wrapper" data-info="1" style="display: none;">
+            <div class="stage-info-left">
+              <h3>Runway & Burn Tracking</h3>
+              <p>Know exactly how long your money will last with real-time burn rate calculations and runway projections. Puzzle's investor dashboards help you secure pre-seed funding with clean financials and clear metrics that VCs actually want to see.</p>
+            </div>
+            <div class="stage-info-right">
+              <h3>Oh no! 😱</h3>
+              <p>You thought you had 8 months of runway left, but surprise! You've been burning through cash faster than expected. Now you have just 6 weeks left and no investor will touch a company that close to running out of money.</p>
+            </div>
           </div>
-          <div class="stage-info" data-info="2" style="display: none;">
-            <h3>Seed Round</h3>
-            <p>Scale your financial operations as you grow. Automated categorization and reconciliation save hours while maintaining 95% accuracy for growing teams.</p>
+
+          <!-- Seed Stage -->
+          <div class="stage-info-wrapper" data-info="2" style="display: none;">
+            <div class="stage-info-left">
+              <h3>Scale Your Operations</h3>
+              <p>As your team grows, Puzzle grows with you. Automated expense categorization with 95% accuracy, seamless multi-entity support, and real-time financial reporting keep your books clean while you focus on product-market fit and growth.</p>
+            </div>
+            <div class="stage-info-right">
+              <h3>Oh no! 🤯</h3>
+              <p>Your bookkeeper just quit right before your Series A fundraise. Three months of uncategorized transactions, missing receipts, and your investors are asking for audited financials. Your lead VC is getting cold feet.</p>
+            </div>
           </div>
-          <div class="stage-info" data-info="3" style="display: none;">
-            <h3>Series A</h3>
-            <p>Advanced metrics and variance analysis help you optimize operations. Real-time financial insights support strategic decisions as you scale rapidly.</p>
+
+          <!-- Series A Stage -->
+          <div class="stage-info-wrapper" data-info="3" style="display: none;">
+            <div class="stage-info-left">
+              <h3>Advanced Financial Intelligence</h3>
+              <p>Get sophisticated metrics and variance analysis that help optimize your unit economics. Real-time insights into CAC, LTV, and cohort analysis give you the data-driven edge to make strategic decisions that accelerate growth.</p>
+            </div>
+            <div class="stage-info-right">
+              <h3>Oh no! 📉</h3>
+              <p>Your board meeting is next week and the investors want to see detailed unit economics. You discover your customer acquisition cost has been quietly climbing for months and you're actually losing money on every new customer.</p>
+            </div>
           </div>
-          <div class="stage-info" data-info="4" style="display: none;">
-            <h3>Series B/C Growth</h3>
-            <p>Enterprise-grade financial infrastructure grows with you. Multi-entity support and advanced reporting keep pace with your expansion.</p>
+
+          <!-- Series B/C Stage -->
+          <div class="stage-info-wrapper" data-info="4" style="display: none;">
+            <div class="stage-info-left">
+              <h3>Enterprise-Grade Infrastructure</h3>
+              <p>Multi-entity consolidation, advanced reporting, and enterprise integrations scale with your complexity. Puzzle handles international operations, stock option accounting, and sophisticated revenue recognition as you expand globally.</p>
+            </div>
+            <div class="stage-info-right">
+              <h3>Oh no! 🌍</h3>
+              <p>You just expanded to 3 new countries and launched 2 new product lines. Your CFO is drowning trying to consolidate financials across entities, and the audit firm wants everything reconciled by month-end. International compliance is a nightmare.</p>
+            </div>
           </div>
-          <div class="stage-info" data-info="5" style="display: none;">
-            <h3>Exit/IPO Ready</h3>
-            <p>Auditor-friendly books and comprehensive financial statements make your exit seamless. Puzzle ensures your financials meet the highest standards.</p>
+
+          <!-- Exit/IPO Stage -->
+          <div class="stage-info-wrapper" data-info="5" style="display: none;">
+            <div class="stage-info-left">
+              <h3>Exit-Ready Financials</h3>
+              <p>Auditor-approved books and SOX-compliant processes make your exit seamless. Whether it's an acquisition or IPO, Puzzle ensures your financial statements meet the highest standards with full audit trails and regulatory compliance.</p>
+            </div>
+            <div class="stage-info-right">
+              <h3>Oh no! 🚨</h3>
+              <p>A Fortune 500 company wants to acquire you for $500M, but their due diligence team found inconsistencies in your historical financials. The deal is at risk and they're threatening to walk away over accounting irregularities.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -178,7 +225,7 @@
           currentStage = -1;
           
           // Hide all info cards
-          const allInfoCards = document.querySelectorAll('.stage-info');
+          const allInfoCards = document.querySelectorAll('.stage-info-wrapper');
           allInfoCards.forEach(card => card.style.display = 'none');
           
           // Gray out all stages again
@@ -196,7 +243,7 @@
 
     function activateStage(stage) {
       // Hide all stage info cards first
-      const allInfoCards = document.querySelectorAll('.stage-info');
+      const allInfoCards = document.querySelectorAll('.stage-info-wrapper');
       allInfoCards.forEach(card => card.style.display = 'none');
       
       const stageGroup = document.querySelector(`[data-stage="${stage}"].stage-group`);
@@ -207,7 +254,7 @@
       // Show corresponding info card with slight delay for better UX
       if (stageInfo) {
         setTimeout(() => {
-          stageInfo.style.display = 'block';
+          stageInfo.style.display = 'flex';
         }, 300);
       }
     }
