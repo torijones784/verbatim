@@ -575,7 +575,6 @@ nav {
 }
 
 /* Phone Responsive Design - ONLY PHONE CHANGES */
-/* Phone Responsive Design - ONLY PHONE CHANGES */
 @media (max-width: 480px) {
   /* Nav stays on one line */
   nav {
@@ -594,6 +593,22 @@ nav {
   .auth-buttons a {
     font-size: 12px !important;
     padding: 6px 8px !important;
+  }
+  
+  /* Make hero text larger (except LIFE) */
+  .hero-title {
+    font-size: clamp(42px, 8vw, 72px) !important;
+  }
+  
+  /* Make hero subtext smaller */
+  .hero-subtitle {
+    font-size: 16px !important;
+  }
+  
+  /* Make spin button width shorter */
+  .primary-btn {
+    min-width: 120px !important;
+    max-width: 200px !important;
   }
   
   /* Make LIFE bigger */
