@@ -625,12 +625,18 @@ nav {
     width: 100% !important;
     max-width: 100% !important;
     overflow: visible !important;
+    margin-bottom: 40px !important;
   }
   
   /* Ensure the game container doesn't overflow */
   .game-container {
     padding: 0 10px !important;
     overflow-x: auto !important;
+  }
+  
+  /* Push info cards down below the gameboard */
+  .stage-info-container {
+    margin-top: 20px !important;
   }
   
   /* Bigger tile states */
