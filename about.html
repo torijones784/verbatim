@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>About Tori Jones - Puzzle</title>
+    <link rel="stylesheet" href="puzzlestyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      .about-section {
+        padding: 80px 20px 120px;
+        background: linear-gradient(180deg, #402a7e 0%, #1d1158 100%);
+        min-height: 100vh;
+        color: var(--puzzle-white);
+      }
+      
+      .about-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .about-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      
+      .about-title {
+        font-size: clamp(36px, 5vw, 56px);
+        font-weight: 700;
+        margin-bottom: 16px;
+        background: linear-gradient(135deg, var(--puzzle-white) 0%, rgba(255, 255, 255, 0.8) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      .about-subtitle {
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 400;
+      }
+      
+      .about-content {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 60px;
+        align-items: start;
+      }
+      
+      .photo-section {
+        position: sticky;
+        top: 40px;
+      }
+      
+      .profile-photo {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        border: 3px solid rgba(80, 251, 169, 0.3);
+      }
+      
+      .content-section {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+      
+      .content-section h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--puzzle-green);
+        margin-bottom: 24px;
+      }
+      
+      .content-section p {
+        font-size: 18px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 24px;
+      }
+      
+      .highlight-text {
+        color: var(--puzzle-green);
+        font-weight: 600;
+      }
+      
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--puzzle-white);
+        padding: 12px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        margin-bottom: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      .back-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-1px);
+      }
+      
+      .back-link::before {
+        content: "←";
+        font-size: 16px;
+      }
+      
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .about-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        
+        .photo-section {
+          position: static;
+          text-align: center;
+        }
+        
+        .profile-photo {
+          width: 280px;
+          height: 280px;
+          margin: 0 auto;
+        }
+        
+        .content-section {
+          padding: 30px 24px;
+        }
+        
+        .about-section {
+          padding: 60px 20px 80px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="./images/puzzle_logo_two.png" alt="Puzzle Logo" />
+            <span class="logo-text">Puzzle</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Solutions</a>
+            <a href="#" class="nav-link">Why Puzzle</a>
+            <a href="#" class="nav-link">Pricing</a>
+            <a href="#" class="nav-link">Resources</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="#" class="login">Sign In</a>
+            <a href="#" class="demo-btn">Book a Demo</a>
+            <a href="#" class="cta-btn">Get Started</a>
+        </div>
+    </nav>
+
+    <section class="about-section">
+      <div class="about-container">
+        <a href="index.html" class="back-link">Back to Game</a>
+        
+        <div class="about-header">
+          <h1 class="about-title">About Tori Jones</h1>
+          <p class="about-subtitle">Why hire a coder MBA to do a writer's job?</p>
+        </div>
+        
+        <div class="about-content">
+          <div class="photo-section">
+            <img src="tori.jpg" alt="Tori Jones" class="profile-photo">
+          </div>
+          
+          <div class="content-section">
+            <h2>I've made my career out of saying yes to things</h2>
+            
+            <p>When I was 22, the startup I worked for asked me to learn how to implement a business intelligence tool from scratch with no experience. I said yes, and that's how I learned to code.</p>
+            
+            <p>When I was 24, a boutique consulting agency brought me on to project manage some of their top clients - including a <span class="highlight-text">Fortune 10 tech company and a top 4 telecommunications firm</span>. I said yes, and that's how I learned enterprise-level project management and stakeholder communication.</p>
+            
+            <p>My career has been about <span class="highlight-text">bridging the gap between "what if" and "here it is."</span> From building automated business intelligence systems at hyper-growth startups to designing operational improvements at major telecom companies, I specialize in making ambitious ideas achievable.</p>
+            
+            <p>At Cresco Labs, I took a 75-person cannabis startup through 20x growth by implementing their first real-time reporting system - handling <span class="highlight-text">54+ million rows across 1000+ datasets</span> and cutting projected analytics costs by 65%. I taught myself to code, built the entire infrastructure, and delivered insights directly to C-suite executives.</p>
+            
+            <p>For Tilt Holdings, I led end-to-end business analytics transformation across their 4-brand cannabis portfolio, designing automated forecasting systems that <span class="highlight-text">saved 10 working days monthly</span> across sales, marketing, finance, and operations teams. I freed teams from manual data wrestling so they could focus on strategic growth.</p>
+            
+            <p>I'm an <span class="highlight-text">MBA from University of Chicago Booth</span> and a technical resource you can actually talk to. I've self-taught all of my technical knowledge, which means I approach problems from a human-first, not tech-first perspective.</p>
+            
+            <p>In my spare time, I work on Pixel & Prose - my exploration into how technology can make reading more exciting through interactive fiction that puts millennial women at the center of immersive digital storytelling.</p>
+            
+            <p>I'm looking for a role that will allow me to bring my full self to the job - my strategic thinking & operational improvement skills, my technical abilities, and my never-ending drive to make the big, hairy ideas conceivable & achievable.</p>
+            
+            <p><em>This might sound strange, but I'm very comfortable with mess. To me, mess is inevitable in transformational work - and by embracing it, we can build things that actually work for real people.</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
