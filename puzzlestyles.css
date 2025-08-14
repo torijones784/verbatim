@@ -427,6 +427,63 @@ nav {
   fill-opacity: 1 !important;
 }
 
+.stage-info-container {
+  margin-top: -125px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stage-info-wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.stage-info-left {
+  flex: 1.5;
+  background: rgba(80, 251, 169, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: left;
+  border: 1px solid rgba(80, 251, 169, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.stage-info-right {
+  flex: 1;
+  background: rgba(255, 107, 107, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.stage-info-left h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--puzzle-green);
+  margin-bottom: 16px;
+}
+
+.stage-info-right h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin-bottom: 14px;
+}
+
+.stage-info-left p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
 .stage-info-right p {
   font-size: 16px;
   line-height: 1.5;
@@ -567,61 +624,4 @@ nav {
   .stage-info-right {
     padding: 20px 16px !important;
   }
-
-  -container {
-  margin-top: -125px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.stage-info-wrapper {
-  display: flex;
-  gap: 24px;
-  align-items: stretch;
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.stage-info-left {
-  flex: 1.5;
-  background: rgba(80, 251, 169, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 32px;
-  text-align: left;
-  border: 1px solid rgba(80, 251, 169, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.stage-info-right {
-  flex: 1;
-  background: rgba(255, 107, 107, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 24px;
-  text-align: left;
-  border: 1px solid rgba(255, 107, 107, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.stage-info-left h3 {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--puzzle-green);
-  margin-bottom: 16px;
-}
-
-.stage-info-right h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #ff6b6b;
-  margin-bottom: 14px;
-}
-
-.stage-info-left p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0;
-}
 }
