@@ -35,7 +35,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Banner */
 .top-banner {
   background-color: var(--puzzle-green);
   color: var(--puzzle-gray-900);
@@ -58,7 +57,6 @@ body {
   opacity: 0.8;
 }
 
-/* Navigation */
 nav {
   display: flex;
   justify-content: space-between;
@@ -157,7 +155,6 @@ nav {
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 0.12);
 }
 
-/* Game Section */
 .game-section {
   padding: 40px 20px 60px;
   background: transparent;
@@ -308,7 +305,6 @@ nav {
   box-shadow: 0 8px 16px 0 rgb(0 0 0 / 0.15);
 }
 
-/* Spinning animation */
 .primary-btn.spinning {
   animation: spinColorChange 3s linear;
 }
@@ -361,7 +357,6 @@ nav {
   margin-top: -30px;
 }
 
-/* Stage states */
 .stage-group {
   transition: all 0.5s ease;
 }
@@ -402,7 +397,6 @@ nav {
   transition: all 0.5s ease;
 }
 
-/* Grayed out state */
 .stage-group.grayed .stage-outer {
   stroke-opacity: 0.3 !important;
 }
@@ -415,7 +409,6 @@ nav {
   fill-opacity: 0.4 !important;
 }
 
-/* Active state - full color and double size */
 .stage-group.active {
   transform: scale(2);
   z-index: 10;
@@ -433,8 +426,164 @@ nav {
   fill-opacity: 1 !important;
 }
 
-/* Stage Information Cards */
-.stage-info-container {
+.stage-info-right p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.stage-info-wrapper[data-info="1"] .stage-info-left h3,
+.stage-info-wrapper[data-info="4"] .stage-info-left h3 {
+  font-size: 10px !important;
+}
+
+.stage-info-wrapper[data-info="1"] .stage-info-left p,
+.stage-info-wrapper[data-info="4"] .stage-info-left p {
+  font-size: 10px !important;
+  line-height: 1.3 !important;
+}
+
+.stage-info-wrapper[data-info="1"] .stage-info-right h3,
+.stage-info-wrapper[data-info="4"] .stage-info-right h3 {
+  font-size: 10px !important;
+}
+
+.stage-info-wrapper[data-info="1"] .stage-info-right p,
+.stage-info-wrapper[data-info="4"] .stage-info-right p {
+  font-size: 10px !important;
+  line-height: 1.3 !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .auth-buttons {
+    gap: 12px;
+  }
+  
+  .game-section {
+    padding: 60px 20px 20px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .primary-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .stage-info-wrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .stage-info-left,
+  .stage-info-right {
+    flex: 1;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 12px 15px !important;
+    flex-wrap: nowrap !important;
+  }
+  
+  .logo-text {
+    font-size: 20px !important;
+  }
+  
+  .auth-buttons {
+    gap: 6px !important;
+  }
+  
+  .auth-buttons a {
+    font-size: 12px !important;
+    padding: 6px 8px !important;
+  }
+  
+  .hero-title {
+    font-size: clamp(42px, 8vw, 72px) !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 16px !important;
+  }
+  
+  .primary-btn {
+    min-width: 120px !important;
+    max-width: 200px !important;
+  }
+  
+  .life-l, .life-i, .life-f, .life-e {
+    padding: 12px 16px !important;
+    margin: 0 3px !important;
+    font-size: 32px !important;
+  }
+  
+  .game-svg {
+    margin-top: 20px !important;
+    max-height: 200px !important;
+    width: 110% !important;
+    max-width: 110% !important;
+    overflow: visible !important;
+    margin-bottom: 20px !important;
+    margin-left: -5% !important;
+  }
+  
+  .game-container {
+    padding: 0 10px !important;
+    overflow-x: auto !important;
+  }
+  
+  .stage-info-container {
+    margin-top: 20px !important;
+  }
+  
+  .stage-group {
+    transform: scale(1.5) !important;
+  }
+  
+  .stage-group.grayed {
+    transform: scale(1.5) !important;
+  }
+  
+  .stage-group.active {
+    transform: scale(3.125) !important;
+    position: absolute !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+  }
+  
+  .stage-info-left,
+  .stage-info-right {
+    padding: 20px 16px !important;
+  }
+}-container {
   margin-top: -125px;
   max-width: 1000px;
   margin-left: auto;
@@ -491,179 +640,4 @@ nav {
   margin: 0;
 }
 
-.stage-info-right p {
-  font-size: 16px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0;
-}
-
-/* Specific font sizes for pre-seed and series B/C cards - DESKTOP ONLY */
-.stage-info-wrapper[data-info="1"] .stage-info-left h3,
-.stage-info-wrapper[data-info="4"] .stage-info-left h3 {
-  font-size: 10px !important;
-}
-
-.stage-info-wrapper[data-info="1"] .stage-info-left p,
-.stage-info-wrapper[data-info="4"] .stage-info-left p {
-  font-size: 10px !important;
-  line-height: 1.3 !important;
-}
-
-.stage-info-wrapper[data-info="1"] .stage-info-right h3,
-.stage-info-wrapper[data-info="4"] .stage-info-right h3 {
-  font-size: 10px !important;
-}
-
-.stage-info-wrapper[data-info="1"] .stage-info-right p,
-.stage-info-wrapper[data-info="4"] .stage-info-right p {
-  font-size: 10px !important;
-  line-height: 1.3 !important;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Tablet Responsive Design - NO CHANGES FROM ORIGINAL */
-@media (max-width: 768px) {
-  nav {
-    padding: 16px 20px;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  
-  .nav-links {
-    display: none;
-  }
-  
-  .auth-buttons {
-    gap: 12px;
-  }
-  
-  .game-section {
-    padding: 60px 20px 20px;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .primary-btn {
-    width: 100%;
-    max-width: 280px;
-  }
-  
-  .stage-info-wrapper {
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .stage-info-left,
-  .stage-info-right {
-    flex: 1;
-    padding: 24px;
-  }
-}
-
-/* Phone Responsive Design - ONLY PHONE CHANGES */
-@media (max-width: 480px) {
-  /* Nav stays on one line */
-  nav {
-    padding: 12px 15px !important;
-    flex-wrap: nowrap !important;
-  }
-  
-  .logo-text {
-    font-size: 20px !important;
-  }
-  
-  .auth-buttons {
-    gap: 6px !important;
-  }
-  
-  .auth-buttons a {
-    font-size: 12px !important;
-    padding: 6px 8px !important;
-  }
-  
-  /* Make hero text larger (except LIFE) */
-  .hero-title {
-    font-size: clamp(42px, 8vw, 72px) !important;
-  }
-  
-  /* Make hero subtext smaller */
-  .hero-subtitle {
-    font-size: 16px !important;
-  }
-  
-  /* Make spin button width shorter */
-  .primary-btn {
-    min-width: 120px !important;
-    max-width: 200px !important;
-  }
-  
-  /* Make LIFE bigger */
-  .life-l, .life-i, .life-f, .life-e {
-    padding: 12px 16px !important;
-    margin: 0 3px !important;
-    font-size: 32px !important;
-  }
-  
-  /* Move gameboard down and ensure it fits fully */
-  .game-svg {
-    margin-top: 20px !important;
-    max-height: 200px !important;
-    width: 110% !important;
-    max-width: 110% !important;
-    overflow: visible !important;
-    margin-bottom: 20px !important;
-    margin-left: -5% !important;
-  }
-  
-  /* Ensure the game container doesn't overflow */
-  .game-container {
-    padding: 0 10px !important;
-    overflow-x: auto !important;
-  }
-  
-  /* Push info cards down below the gameboard */
-  .stage-info-container {
-    margin-top: 20px !important;
-  }
-  
-  /* Bigger tile states - increased by 25% */
-  .stage-group {
-    transform: scale(1.5) !important;
-  }
-  
-  .stage-group.grayed {
-    transform: scale(1.5) !important;
-  }
-  
-  .stage-group.active {
-    transform: scale(3.125) !important;
-    position: absolute !important;
-    z-index: 9999 !important;
-    pointer-events: none !important;
-  }
-  
-  /* Make stage info cards back to normal size */
-  .stage-info-left,
-  .stage-info-right {
-    padding: 20px 16px !important;
-  }
-  
-  .stage-info-left,
-  .stage-info-right {
-    padding: 20px 16px !important;
-  }
-}
+.stage-info

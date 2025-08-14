@@ -13,7 +13,6 @@
         Why hire a coder MBA to do a writer's job? <a href="about.html">Learn more here</a>
     </div>
       
-    <!-- Navigation -->
     <nav>
         <div class="logo">
             <img src="./images/puzzle_logo_two.png" alt="Puzzle Logo" />
@@ -32,10 +31,8 @@
         </div>
     </nav>
 
-    <!-- Single Game Section with Hero Content and Functionality -->
     <section class="game-section">
       <div class="game-container">
-        <!-- Hero Content -->
         <div class="hero-container">
             <div class="stage-label">by Tori Jones</div>
             <h1 class="hero-title">The Startup Accounting Game of <span class="life-text"><span class="life-l">L</span><span class="life-i">I</span><span class="life-f">F</span><span class="life-e">E</span></span></h1>
@@ -45,12 +42,9 @@
             </div>
         </div>
         
-        <!-- Interactive Gameboard with Labels -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" class="game-svg">
-          <!-- Background -->
           <rect width="1000" height="400" fill="transparent" rx="8" />
         
-          <!-- Game path with gradient -->
           <defs>
             <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#50fba9" />
@@ -59,52 +53,43 @@
             </linearGradient>
           </defs>
           
-          <!-- Game path background -->
           <path d="M100,150 C200,130 275,170 350,150 C450,130 525,170 600,150 C700,130 775,170 850,150" 
                 stroke="url(#pathGradient)" stroke-width="12" fill="none" stroke-linecap="round" />
           
-          <!-- Dummy tiles for visual continuity -->
           <circle cx="225" cy="140" r="8" fill="rgba(255,255,255,0.3)" />
           <circle cx="475" cy="160" r="8" fill="rgba(255,255,255,0.3)" />
           <circle cx="725" cy="140" r="8" fill="rgba(255,255,255,0.3)" />
           
-          <!-- Stage circles with labels and functionality -->
-          <!-- Formation -->
           <g class="stage-group" data-stage="0">
             <rect x="65" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#50fba9" stroke-width="3" class="stage-outer" />
             <rect x="71" y="121" width="58" height="58" rx="8" fill="#50fba9" class="stage-inner" />
             <text x="100" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">START</text>
           </g>
           
-          <!-- Pre-seed -->
           <g class="stage-group" data-stage="1">
             <rect x="215" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="3" class="stage-outer" />
             <rect x="221" y="121" width="58" height="58" rx="8" fill="#4f46e5" class="stage-inner" />
             <text x="250" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">PRE-SEED</text>
           </g>
           
-          <!-- Seed -->
           <g class="stage-group" data-stage="2">
             <rect x="365" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="3" class="stage-outer" />
             <rect x="371" y="121" width="58" height="58" rx="8" fill="#10b981" class="stage-inner" />
             <text x="400" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SEED</text>
           </g>
           
-          <!-- Series A -->
           <g class="stage-group" data-stage="3">
             <rect x="515" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="3" class="stage-outer" />
             <rect x="521" y="121" width="58" height="58" rx="8" fill="#3b82f6" class="stage-inner" />
             <text x="550" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SERIES A</text>
           </g>
           
-          <!-- Series B/C -->
           <g class="stage-group" data-stage="4">
             <rect x="665" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="3" class="stage-outer" />
             <rect x="671" y="121" width="58" height="58" rx="8" fill="#7c3aed" class="stage-inner" />
             <text x="700" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SERIES B/C</text>
           </g>
           
-          <!-- Exit/IPO -->
           <g class="stage-group" data-stage="5">
             <rect x="815" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#f59e0b" stroke-width="3" class="stage-outer" />
             <rect x="821" y="121" width="58" height="58" rx="8" fill="#f59e0b" class="stage-inner" />
@@ -112,9 +97,7 @@
           </g>
         </svg>
         
-        <!-- Stage Information Cards -->
         <div class="stage-info-container">
-          <!-- Formation Stage -->
           <div class="stage-info-wrapper" data-info="0" style="display: none;">
             <div class="stage-info-left">
               <h3>Formation Made Simple</h3>
@@ -126,7 +109,6 @@
             </div>
           </div>
 
-          <!-- Pre-Seed Stage -->
           <div class="stage-info-wrapper" data-info="1" style="display: none;">
             <div class="stage-info-left">
               <h3>Runway & Burn Tracking</h3>
@@ -138,7 +120,6 @@
             </div>
           </div>
 
-          <!-- Seed Stage -->
           <div class="stage-info-wrapper" data-info="2" style="display: none;">
             <div class="stage-info-left">
               <h3>Scale Your Operations</h3>
@@ -150,7 +131,6 @@
             </div>
           </div>
 
-          <!-- Series A Stage -->
           <div class="stage-info-wrapper" data-info="3" style="display: none;">
             <div class="stage-info-left">
               <h3>Advanced Financial Intelligence</h3>
@@ -162,7 +142,6 @@
             </div>
           </div>
 
-          <!-- Series B/C Stage -->
           <div class="stage-info-wrapper" data-info="4" style="display: none;">
             <div class="stage-info-left">
               <h3>Enterprise-Grade Infrastructure</h3>
@@ -174,7 +153,6 @@
             </div>
           </div>
 
-          <!-- Exit/IPO Stage -->
           <div class="stage-info-wrapper" data-info="5" style="display: none;">
             <div class="stage-info-left">
               <h3>Exit-Ready Financials</h3>
@@ -191,44 +169,36 @@
   </body>
   
   <script>
-    let currentStage = -1; // Start at -1 so first click activates stage 0
+    let currentStage = -1;
     const totalStages = 6;
 
     function spinButton(button) {
       button.classList.add('spinning');
       
-      // After 3 seconds (when animation ends)
       setTimeout(() => {
         button.classList.remove('spinning');
         
-        // Gray out previous stage if it exists
         if (currentStage >= 0) {
           grayOutStage(currentStage);
         }
         
-        // Move to next stage
         currentStage++;
         
         if (currentStage < totalStages) {
-          // Activate current stage
           activateStage(currentStage);
           
-          // Check if we're at the last stage (EXIT/IPO)
           if (currentStage === totalStages - 1) {
             button.textContent = 'Restart';
           } else {
             button.textContent = 'Spin';
           }
         } else {
-          // Reset everything for restart
           button.textContent = 'Spin';
           currentStage = -1;
           
-          // Hide all info cards
           const allInfoCards = document.querySelectorAll('.stage-info-wrapper');
           allInfoCards.forEach(card => card.style.display = 'none');
           
-          // Gray out all stages again
           for (let i = 0; i < totalStages; i++) {
             const stageGroup = document.querySelector(`[data-stage="${i}"].stage-group`);
             
@@ -242,7 +212,6 @@
     }
 
     function activateStage(stage) {
-      // Hide all stage info cards first
       const allInfoCards = document.querySelectorAll('.stage-info-wrapper');
       allInfoCards.forEach(card => card.style.display = 'none');
       
@@ -251,12 +220,10 @@
       
       if (stageGroup) stageGroup.classList.add('active');
       
-      // Show corresponding info card with slight delay for better UX
       if (stageInfo) {
         setTimeout(() => {
           stageInfo.style.display = 'flex';
           
-          // Smooth scroll to bottom after cards appear
           setTimeout(() => {
             window.scrollTo({
               top: document.body.scrollHeight,
@@ -276,7 +243,6 @@
       }
     }
 
-    // Initialize all stages as grayed out
     document.addEventListener('DOMContentLoaded', function() {
       for (let i = 0; i < totalStages; i++) {
         const stageGroup = document.querySelector(`[data-stage="${i}"].stage-group`);
