@@ -116,7 +116,42 @@
         font-size: 16px;
       }
 
-      /* Updated nav styles for wider Get Started button */
+      /* Updated nav styles to match home page */
+      .auth-buttons {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .auth-buttons a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.2s ease;
+      }
+
+      .login {
+        color: rgba(255, 255, 255, 0.8);
+        padding: 8px 16px;
+      }
+
+      .login:hover {
+        color: var(--puzzle-white);
+      }
+
+      .demo-btn {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--puzzle-white);
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .demo-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
       .cta-btn {
         background-color: var(--puzzle-green);
         color: #000000;
@@ -307,13 +342,15 @@
             <span class="logo-text">Puzzle</span>
         </div>
         <div class="auth-buttons">
+            <a href="#" class="login">Sign In</a>
+            <a href="#" class="demo-btn">Book a Demo</a>
             <a href="#" class="cta-btn" onclick="showContactPopup(); return false;">Get Started</a>
         </div>
     </nav>
 
     <section class="about-section">
       <div class="about-container">
-        
+        <a href="puzzle.html" class="back-link">Back to Game</a>
         
         <div class="about-header">
           <h1 class="about-title">About Tori Jones</h1>
@@ -340,7 +377,6 @@
             <p><em>-T</em></p>
           </div>
         </div>
-        <a href="puzzle.html" class="back-link">Back to Game</a>
       </div>
     </section>
 
