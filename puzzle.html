@@ -6,6 +6,164 @@
     <title>Puzzle</title>
     <link rel="stylesheet" href="puzzlestyles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Updated nav styles for wider Get Started button */
+      .cta-btn {
+        background-color: var(--puzzle-green);
+        color: #000000;
+        padding: 10px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        min-width: 140px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .cta-btn:hover {
+        background-color: #42e094;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 0.12);
+      }
+
+      /* Contact Popup Styles */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+        backdrop-filter: blur(5px);
+      }
+
+      .popup-content {
+        background: linear-gradient(145deg, rgba(80, 251, 169, 0.15), rgba(124, 58, 237, 0.15));
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 0;
+        max-width: 500px;
+        width: 90%;
+        border: 2px solid rgba(80, 251, 169, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        animation: popupFadeIn 0.3s ease-out;
+      }
+
+      .popup-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 32px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .popup-header h3 {
+        color: var(--puzzle-green);
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 28px;
+        cursor: pointer;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+      }
+
+      .close-btn:hover {
+        color: var(--puzzle-white);
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .popup-body {
+        padding: 16px 32px 32px;
+      }
+
+      .popup-body p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 16px;
+        margin-bottom: 24px;
+        text-align: center;
+      }
+
+      .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--puzzle-white);
+        font-weight: 600;
+        transition: all 0.2s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .contact-link:hover {
+        background: rgba(80, 251, 169, 0.2);
+        border-color: var(--puzzle-green);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-icon {
+        font-size: 20px;
+        width: 24px;
+        text-align: center;
+      }
+
+      @keyframes popupFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9) translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .popup-content {
+          width: 95%;
+          margin: 20px;
+        }
+        
+        .popup-header {
+          padding: 20px 24px 16px;
+        }
+        
+        .popup-body {
+          padding: 16px 24px 24px;
+        }
+        
+        .contact-link {
+          padding: 14px 16px;
+          gap: 12px;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -18,16 +176,10 @@
             <img src="./images/puzzle_logo_two.png" alt="Puzzle Logo" />
             <span class="logo-text">Puzzle</span>
         </div>
-        <!-- <div class="nav-links">
-            <a href="#" class="nav-link">Solutions</a>
-            <a href="#" class="nav-link">Why Puzzle</a>
-            <a href="#" class="nav-link">Pricing</a>
-            <a href="#" class="nav-link">Resources</a>
-        </div> -->
         <div class="auth-buttons">
             <a href="#" class="login">Sign In</a>
             <a href="#" class="demo-btn">Book a Demo</a>
-            <a href="#" class="cta-btn">Get Started</a>
+            <a href="#" class="cta-btn" onclick="showContactPopup(); return false;">Get Started</a>
         </div>
     </nav>
 
@@ -60,37 +212,37 @@
           <circle cx="475" cy="160" r="8" fill="rgba(255,255,255,0.3)" />
           <circle cx="725" cy="140" r="8" fill="rgba(255,255,255,0.3)" />
           
-          <g class="stage-group" data-stage="0">
+          <g class="stage-group" data-stage="0" style="cursor: pointer;" onclick="clickStage(0)">
             <rect x="65" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#50fba9" stroke-width="3" class="stage-outer" />
             <rect x="71" y="121" width="58" height="58" rx="8" fill="#50fba9" class="stage-inner" />
             <text x="100" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">START</text>
           </g>
           
-          <g class="stage-group" data-stage="1">
+          <g class="stage-group" data-stage="1" style="cursor: pointer;" onclick="clickStage(1)">
             <rect x="215" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#4f46e5" stroke-width="3" class="stage-outer" />
             <rect x="221" y="121" width="58" height="58" rx="8" fill="#4f46e5" class="stage-inner" />
             <text x="250" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">PRE-SEED</text>
           </g>
           
-          <g class="stage-group" data-stage="2">
+          <g class="stage-group" data-stage="2" style="cursor: pointer;" onclick="clickStage(2)">
             <rect x="365" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="3" class="stage-outer" />
             <rect x="371" y="121" width="58" height="58" rx="8" fill="#10b981" class="stage-inner" />
             <text x="400" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SEED</text>
           </g>
           
-          <g class="stage-group" data-stage="3">
+          <g class="stage-group" data-stage="3" style="cursor: pointer;" onclick="clickStage(3)">
             <rect x="515" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="3" class="stage-outer" />
             <rect x="521" y="121" width="58" height="58" rx="8" fill="#3b82f6" class="stage-inner" />
             <text x="550" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SERIES A</text>
           </g>
           
-          <g class="stage-group" data-stage="4">
+          <g class="stage-group" data-stage="4" style="cursor: pointer;" onclick="clickStage(4)">
             <rect x="665" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="3" class="stage-outer" />
             <rect x="671" y="121" width="58" height="58" rx="8" fill="#7c3aed" class="stage-inner" />
-            <text x="700" y="155" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SERIES B/C</text>
+            <text x="700" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SERIES B/C</text>
           </g>
           
-          <g class="stage-group" data-stage="5">
+          <g class="stage-group" data-stage="5" style="cursor: pointer;" onclick="clickStage(5)">
             <rect x="815" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#f59e0b" stroke-width="3" class="stage-outer" />
             <rect x="821" y="121" width="58" height="58" rx="8" fill="#f59e0b" class="stage-inner" />
             <text x="850" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">EXIT/IPO</text>
@@ -166,11 +318,50 @@
         </div>
       </div>
     </section>
+
+    <!-- Contact Popup -->
+    <div id="contactPopup" class="popup-overlay" style="display: none;">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h3>Let's Connect!</h3>
+          <button class="close-btn" onclick="closeContactPopup()">&times;</button>
+        </div>
+        <div class="popup-body">
+          <p>Ready to get started? Here's how you can reach me:</p>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/torijones" target="_blank" class="contact-link linkedin">
+              <span class="contact-icon">💼</span>
+              <span>LinkedIn Profile</span>
+            </a>
+            <a href="mailto:jonestori784@gmail.com" class="contact-link email">
+              <span class="contact-icon">📧</span>
+              <span>jonestori784@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   
   <script>
     let currentStage = -1;
     const totalStages = 6;
+
+    function showContactPopup() {
+      document.getElementById('contactPopup').style.display = 'flex';
+    }
+
+    function closeContactPopup() {
+      document.getElementById('contactPopup').style.display = 'none';
+    }
+
+    // Close popup when clicking outside
+    window.onclick = function(event) {
+      const popup = document.getElementById('contactPopup');
+      if (event.target === popup) {
+        closeContactPopup();
+      }
+    }
 
     function clickStage(stage) {
       if (currentStage >= 0) {
