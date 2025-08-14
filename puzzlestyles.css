@@ -359,6 +359,7 @@ nav {
 
 .stage-group {
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .stage-group[data-stage="0"] {
@@ -556,7 +557,7 @@ nav {
   }
   
   .stage-group.active {
-    transform: scale(3.125) !important;
+    transform: scale(2.5) !important;
     position: absolute !important;
     z-index: 9999 !important;
     pointer-events: none !important;
@@ -622,5 +623,3 @@ nav {
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
 }
-
-.stage-info
