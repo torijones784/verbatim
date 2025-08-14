@@ -557,7 +557,7 @@ nav {
   }
   
   .stage-group.active {
-    transform: scale(2.5) !important;
+    transform: scale(2) !important;
     position: absolute !important;
     z-index: 9999 !important;
     pointer-events: none !important;
@@ -567,7 +567,8 @@ nav {
   .stage-info-right {
     padding: 20px 16px !important;
   }
-}-container {
+
+  -container {
   margin-top: -125px;
   max-width: 1000px;
   margin-left: auto;
@@ -622,4 +623,5 @@ nav {
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
+}
 }
