@@ -87,7 +87,7 @@
           <g class="stage-group" data-stage="4">
             <rect x="665" y="115" width="70" height="70" rx="12" fill="#ffffff" stroke="#7c3aed" stroke-width="3" class="stage-outer" />
             <rect x="671" y="121" width="58" height="58" rx="8" fill="#7c3aed" class="stage-inner" />
-            <text x="700" y="155" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SERIES B/C</text>
+            <text x="700" y="155" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" fill="#ffffff" class="stage-text">SERIES B/C</text>
           </g>
           
           <g class="stage-group" data-stage="5">
@@ -171,6 +171,22 @@
   <script>
     let currentStage = -1;
     const totalStages = 6;
+
+    function clickStage(stage) {
+      if (currentStage >= 0) {
+        grayOutStage(currentStage);
+      }
+      
+      currentStage = stage;
+      activateStage(currentStage);
+      
+      const button = document.querySelector('.primary-btn');
+      if (currentStage === totalStages - 1) {
+        button.textContent = 'Restart';
+      } else {
+        button.textContent = 'Spin';
+      }
+    }
 
     function spinButton(button) {
       button.classList.add('spinning');
